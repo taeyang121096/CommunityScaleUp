@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCALE-UP!_ 반응형 웹 만들기</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Song+Myung&display=swap" rel="stylesheet">
+    
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  
+    <script>      
+      $(document).ready(function(){
+          $('h3').hover(function(){
+              $(this).css({
+                  color:'#E7EA32'
+              });
+  
+          },function(){
+              $(this).css({
+                  color:''
+              });
+          });
+      });
+    </script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Song Myung', serif;
+        }
+        
+        .info {
+            overflow: hidden;
+            padding: 5px;
+            text-align: center;
+            background: yellow;
+            margin-top: 20px;
+        }
+        span {
+            animation-name: color;
+            animation-duration: 3.5s;
+            animation-iteration-count: 3.5s;
+            animation-fill-mode: forwards;
+        }
+
+        body {
+            padding: 10px;
+            background: #DBE5FD;
+        }
+
+        .header {
+            padding: 10px;
+            text-align: center;
+            background: white;
+        }
+
+        .header h1 {
+            color:#4D79CC;
+            font-size: 60px;
+            text-decoration-line: white;
+
+        }
+
+        span h1 {
+            font-size: 50px;
+            font-weight: lighter;
+        }
+
+    
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .left {
+            float: left;
+            width: 75%;
+        }
+
+        .right {
+            float: left;
+            width: 25%;
+            background-color: tomato;
+            padding-left: 20px;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>" SCALE-UP ! "</h1>
+        <p>우리 존재 화이팅</p>
+    </div>
+    <hr>   
+
+    <div class="row">
+        <div class="left">
+            <div class="card">
+                <h5><소제목></h5>
+                <span>
+                    <h1>"제목"</h1>
+                </span>
+                
+                <img src="img/jokebear.jpg">
+
+                <h4>소제목</h4>
+                <p>
+                <ul>
+                    <li>예1 <br>ㅇㅇㅇ</li>
+                    <li>예2 <br>ㅇㅇㅇ</li>
+                    <li>예3 <br>ㅇㅇㅇ</li>
+
+                </ul>
+                </p>
+                <p>
+                    내용1
+                </p>
+            </div>
+        </div> 
+        
+        <div class="info">            
+            <img src="img/jokebear.jpg" style="height:100%; width:100%;">
+            <p>훌쩍 농담곰</p>          
+           
+        </div>
+</body>
+
+</html>
