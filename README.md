@@ -1,22 +1,28 @@
 # CommunityScaleUp
 ### Dev about community and implements about new skill
 
-#  멍멍이 커뮤니티 플랫폼 제작
-### 견주들이 강아지들로 소통할 수 있는 플랫폼 과 쇼핑몰을 제작
+# 🐕🐩 멍멍이 커뮤니티 플랫폼 제작 🐶🐾
 
-## 구성원
+### 견주들이 강아지들로 소통할 수 있는 플랫폼과 쇼핑몰을 제작
+
+## 구성원 😎
 # 팀원
 | 팀원 | 역할 |
 |-----|-----|
-|이태양| PM, 백엔드 | 
-|김태강|백엔드
+|이태양| PM, 백엔드, 프론트엔드 | 
+|김태강|백엔드|
 |고은영| 프론트엔드 | 
 |김진주| 프론트엔드 | 
 |허수빈|프론트엔드|
 
 ## 기술스택
-- client - react<br>
-- Server - h2 -> mySql, spring boot, Jpa
+| Front-end | Back-end |
+|-----|-----|
+|JavaScript| Spring-boot | 
+|React|Spring Data JPA|
+|Html5| H2 | 
+|Css| Docker | 
+|   |Git(CI/CD)|
 
 ## 커밋규칙
  commit -> 
