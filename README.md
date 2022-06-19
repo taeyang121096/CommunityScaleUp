@@ -25,9 +25,9 @@
 
 ## 커밋규칙
  commit -> 
-# 개발 : dev prefix,<br> 
-# 수정 : upd prefix,<br> 
-# 삭제 : del prefix -> suffix login1.js” -> dev login1.js <br>
+### 개발 : dev prefix,<br> 
+### 수정 : upd prefix,<br> 
+### 삭제 : del prefix -> suffix login1.js” -> dev login1.js <br>
 
 ## 구현기능
 * main page
