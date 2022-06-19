@@ -24,7 +24,7 @@
 |   |Git(CI/CD)|
 
 ## 커밋규칙
- commit -> 
+### commit -> 
 ### 개발 : dev prefix,<br> 
 ### 수정 : upd prefix,<br> 
 ### 삭제 : del prefix -> suffix login1.js” -> dev login1.js <br>
