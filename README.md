@@ -6,6 +6,7 @@
 
 ## 구성원
 - 이태양 (Back.dev)<br>
+- 김태강 (Back.dev)<br>
 - 고은영 (Front.dev)<br>
 - 김진주 (Front.dev)<br>
 - 허수빈 (Front.dev)<br>
