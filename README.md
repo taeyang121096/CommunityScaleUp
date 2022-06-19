@@ -1,5 +1,4 @@
-# CommunityScaleUp
-### Dev about community and implements about new skill
+
 
 # 🐕🐩 멍멍이 커뮤니티 플랫폼 제작 🐶🐾
 
