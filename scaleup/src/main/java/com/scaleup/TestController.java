@@ -13,7 +13,9 @@ import javax.servlet.http.HttpServletRequest;
 public class TestController {
 
     @GetMapping("/ip")
-    public ResponseEntity<String> ip(HttpServletRequest request) {
+    public ResponseEntity<String> ip(HttpServletRequest request)
+    {
+        System.out.println("Test");
         return ResponseEntity.ok(request.getRemoteAddr());
     }
 }
