@@ -12,10 +12,10 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping("/api")
 public class TestController {
 
-    @GetMapping("/ip")
-    public ResponseEntity<String> ip(HttpServletRequest request)
+    @GetMapping("/test")
+    public String test()
     {
         System.out.println("Test");
-        return ResponseEntity.ok(request.getRemoteAddr());
+        return "testing";
     }
 }
