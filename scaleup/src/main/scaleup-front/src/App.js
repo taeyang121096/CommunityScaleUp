@@ -1,5 +1,6 @@
-// import logo from './logo.svg';
-// import './App.css';
+
+/* // import logo from './logo.svg';
+ //import './App.css';
 
 // function App() {
 //   return (
@@ -25,6 +26,7 @@
 // export default App;
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import {Button, Progress} from 'semantic-ui-react'
 
 function App() {
   // IP주소 변수 선언
@@ -52,6 +54,26 @@ function App() {
       dfdfdf
       dfdfdfdfdfdfdfdfdf
     </div>
+    
+  );
+}
+
+export default App;*/
+import React from 'react';
+import './App.css';
+import Navbar from'./Navbar';
+import {HashRouter as Router, Routes, Route} from 'react-router-dom';
+
+function App() {
+  return (
+    <>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path='/' exact />
+      </Routes>
+    </Router>
+    </>
   );
 }
 
