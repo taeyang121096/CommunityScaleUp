@@ -23,12 +23,6 @@ function Navbar() {
         }
     };
 
-    // SIGNUP버튼이 사이즈가 줄어들면 없어지도록 한다. 
-     useEffect(() => {
-        showButton();
-    }, []);
-
-
     window.addEventListener('resize', showButton);
 
      

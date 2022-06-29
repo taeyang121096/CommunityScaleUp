@@ -63,17 +63,22 @@ import React from 'react';
 import './App.css';
 import Navbar from'./Navbar';
 import {HashRouter as Router, Routes, Route} from 'react-router-dom';
+import Login from "./login";
 
 function App() {
   return (
     <>
     <Router>
       <Navbar />
+      <div>
+        <Login />
+      </div>
       <Routes>
         <Route path='/' exact />
       </Routes>
     </Router>
     </>
+  
   );
 }
 
