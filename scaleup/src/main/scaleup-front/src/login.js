@@ -1,13 +1,17 @@
 import React, { useState, useEffect} from 'react'
-import "./App.css"
+import "./login.css"
 import {validateId, validatePw, validateWhitespace} from "./util.js"
 import { Link } from 'react-router-dom';
+import { css } from "@emotion/react";
+import axios from 'axios';
 
 function Login() {
 
     const [Id, setId] = useState("")
     const [Pw, setPw] = useState("")
-    const [disabled, setDisabled] = useState(false);
+    const [disabled, setDisabled] = useState(false); //disabled는 비활성화. false이므로 활성화가 기본.
+    const [loginOpen, setloginOpen] = useState(false);
+
 
     const handleIdChange = (Id) => {
         setId(Id.currentTarget.value);
@@ -21,25 +25,29 @@ function Login() {
         setDisabled(!(validateId(Id) && !(validateWhitespace(Id)) && validatePw(Pw) && !(validateWhitespace(Pw))))
       }, [Id, Pw])
 
+      //로그인 버튼 클릭 시, 정보 보내기
+      const onClickLogin = () => {
+        axios.post('',null, {
+
+        })
+      }
+
 
     return (
-        <div style={{
-            display: 'flex', justifyContent: 'center', alignItems: 'center',
-            width: '100%', height: '100vh'
-        }}>
-            <form style={{ display: 'flex', flexDirection: 'column'}}>
-                <div style={{fontSize:20, fontWeight:'bold', paddingBottom: 5}}>SIGN IN</div>
-                <div style={{ width: "100%", textAlign: "center", borderTop: "1.4px solid black", paddingBottom: 20}}>
-                </div>
-                <div style={{marginBottom : '10px'}}>
-                <input type="text" value={Id} placeholder="ID" onChange={handleIdChange} />
+        <div className='container'>
+            <form className='loginForm' action="" method="post">
+                <div className='title'>SIGN IN</div>
+                <div className='hr'>
                 </div>
                 <div>
-                <input type="password" value={Pw} placeholder="PASSWORD" onChange={handlePwChange} />
+                <input className='id' type="text" value={Id} placeholder="ID" onChange={handleIdChange} />
+                </div>
+                <div>
+                <input className='pw' type="password" value={Pw} placeholder="PASSWORD" onChange={handlePwChange} />
                 </div>
                 <br />
                 <a className="acss" href="">비밀번호를 잊으셨습니까?</a>
-                <button type="submit" disabled={disabled} style={{marginTop: 10}}>
+                <button type="submit" disabled={disabled}>
                     로그인
                 </button>
             </form>

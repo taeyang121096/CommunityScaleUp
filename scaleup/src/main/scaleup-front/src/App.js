@@ -70,9 +70,6 @@ function App() {
     <>
     <Router>
       <Navbar />
-      <div>
-        <Login />
-      </div>
       <Routes>
         <Route path='/' exact />
       </Routes>

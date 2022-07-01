@@ -2,7 +2,8 @@ import React, { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import {Button} from './Button';
 import './Navbar.css';
-
+import Login from "./login";
+import { css } from "@emotion/react";
 
 function Navbar() {
 
@@ -25,6 +26,10 @@ function Navbar() {
 
     window.addEventListener('resize', showButton);
 
+    const [visible, setVisible] = useState(false);
+
+  
+
      
    
     return (
@@ -40,12 +45,12 @@ function Navbar() {
                 </div>
                 <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                     <li className='nav-item'>
-                        <Link to='/sign-up' className='nav-links' onClick = {closeMobileMenu}>
+                        <Link to='' className='nav-links' onClick = {closeMobileMenu}>
                             SIGN UP
                         </Link>
                     </li>     
                     <li className='nav-item'>
-                        <Link to='/sign-in' className='nav-links' onClick = {closeMobileMenu}>
+                        <Link to='/sign-in' className='nav-links' onClick = {() => {setVisible(!visible)}}>
                            SIGN IN
                             <i className="fa fa-user" aria-hidden="true"/>
                         </Link>                 
@@ -53,6 +58,9 @@ function Navbar() {
                 </ul>
             </div>
         </nav>
+        <div>
+        {visible && <Login />}
+        </div>
         </>
     );
 }
