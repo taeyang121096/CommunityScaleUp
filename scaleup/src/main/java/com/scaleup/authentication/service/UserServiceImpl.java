@@ -18,7 +18,7 @@ public class UserServiceImpl implements UserService {
         User save = userRepository.save(User.builder().
                 name(request.getName()).
                 email(request.getEmail()).
-                id(request.getId()).
+                userId(request.getUserId()).
                 pw(request.getPw()).
                 sex(request.getSex()).
                 role(Role.ROLE_USER.getValue()).build()

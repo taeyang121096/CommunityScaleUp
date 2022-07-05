@@ -1,27 +1,31 @@
 package com.scaleup.authentication.dto;
 
+import com.scaleup.core.authorize.Role;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 
 @Builder
 @Getter
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserRequest {
-    @NotBlank
+
+    @NotNull
     @Email
     private String email;
-    @NotBlank
-    private String id;
-    @NotBlank
+    @NotNull
+    private String userId;
+    @NotNull
     private String pw;
-    @NotBlank
+    @NotNull
     private String name;
-    @NotBlank
+    @NotNull
     private String sex;
-    @NotBlank
-    private String role;
 
 }
