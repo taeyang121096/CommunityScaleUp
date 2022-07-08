@@ -2,7 +2,7 @@ import React, { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import {Button} from './Button';
 import './Navbar.css';
-import Login from "./login";
+import Login from "./pages/Login"
 import { css } from "@emotion/react";
 
 function Navbar() {
@@ -26,11 +26,8 @@ function Navbar() {
 
     window.addEventListener('resize', showButton);
 
-    const [visible, setVisible] = useState(false);
+    const [visible, setVisible] = useState(false); //Sign-in 클릭 시, 로그인 창 나타나게 하기.
 
-  
-
-     
    
     return (
         <>
@@ -51,7 +48,7 @@ function Navbar() {
                     </li>     
                     <li className='nav-item'>
                         <Link to='/sign-in' className='nav-links' onClick = {() => {setVisible(!visible)}}>
-                           SIGN IN
+                            SIGN IN
                             <i className="fa fa-user" aria-hidden="true"/>
                         </Link>                 
                     </li>
