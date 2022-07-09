@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from 'react'
+import '../styles/components/Login.css'
 import {validateId, validatePw, validateWhitespace} from "../utils/validateLogin"
 import axios from 'axios';
-import '../styles/Login.css'
 
 function Login() {
 
@@ -9,7 +9,6 @@ function Login() {
     const [Pw, setPw] = useState("")
     const [disabled, setDisabled] = useState(false); //disabled는 비활성화. false이므로 활성화가 기본.
     const [loginOpen, setloginOpen] = useState(false);
-
 
     const handleIdChange = (Id) => {
         setId(Id.currentTarget.value);
@@ -32,10 +31,10 @@ function Login() {
 
 
     return (
-        <div className='container' >
-            <form className='loginForm'  action="" method="post">
-                <div className='title' >SIGN IN</div>
-                <div className='hr' >
+        <div className='container'>
+            <form className='loginForm' action="" method="post">
+                <div className='title'>SIGN IN</div>
+                <div className='hr'>
                 </div>
                 <div>
                 <input className='id' type="text" value={Id} placeholder="ID" onChange={handleIdChange} />

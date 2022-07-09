@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
-import './Navbar.css';
-import Login from "./pages/Login"
+import '../styles/Navbar.css';
+import Login from "../pages/Login"
 
 
 function Navbar() {
@@ -23,9 +23,13 @@ function Navbar() {
                     <li className='nav-item'>
                         <Link to='/sign-in' className='nav-links' onClick = {() => {setVisible(!visible)}}>
                             SIGN IN
-                            <i className="fa fa-user" aria-hidden="true"/>
                         </Link>                 
                     </li>
+                    <li className='nav-item'>
+                        <Link to='' className='nav-links'>
+                        <i className="fa fa-user" aria-hidden="true"/>
+                        </Link>
+                    </li> 
                 </ul>
             </div>
         </div>

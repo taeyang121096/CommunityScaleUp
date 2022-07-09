@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Menubar.css';
+import '/Users/gpqls/CommunityScaleUp/scaleup/src/main/scaleup-front/src/styles/main/Menubar.css';
 
 
 function Menubar() {
