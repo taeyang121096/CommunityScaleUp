@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
+import Login from "./pages/Login"
+
 
 function Navbar() {
+    const [visible, setVisible] = useState(false); //Sign-in 클릭 시, 로그인 창 나타나게 하기.
+
     return (
         <>
         <div className='navbar'>
@@ -12,18 +16,21 @@ function Navbar() {
                 </Link>
                 <ul className= 'nav-menu'>
                     <li className='nav-item'>
-                        <Link to='/sign-up' className='nav-links' >
+                        <Link to='' className='nav-links'>
                             SIGN UP
                         </Link>
                     </li>     
                     <li className='nav-item'>
-                        <Link to='/sign-in' className='nav-links' >
-                           SIGN IN
-                           <i className="fa fa-user" />{/*아이콘 */}
+                        <Link to='/sign-in' className='nav-links' onClick = {() => {setVisible(!visible)}}>
+                            SIGN IN
+                            <i className="fa fa-user" aria-hidden="true"/>
                         </Link>                 
                     </li>
                 </ul>
             </div>
+        </div>
+        <div>
+        {visible && <Login />}
         </div>
         </>
     );
