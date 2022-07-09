@@ -86,7 +86,7 @@ function Login() {
                 <input className='pw' type="password" value={Pw} placeholder="PASSWORD" onChange={handlePwChange} />
                 </div>
                 <br />
-                <a href="" style={aStyle}>비밀번호를 잊으셨습니까?</a>
+                <a className='acss' href="" style={aStyle}>비밀번호를 잊으셨습니까?</a>
                 <button type="submit" disabled={disabled}>
                     로그인
                 </button>
