@@ -1,7 +1,8 @@
 import React, { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Navbar.css';
-import Login from "../pages/Login"
+import Login from "./Login";
+import Signup from "./Signup";
 
 
 function Navbar() {
@@ -16,7 +17,7 @@ function Navbar() {
                 </Link>
                 <ul className= 'nav-menu'>
                     <li className='nav-item'>
-                        <Link to='' className='nav-links'>
+                        <Link to='/sign-up/Signup.js' className='nav-links'>
                             SIGN UP
                         </Link>
                     </li>     
