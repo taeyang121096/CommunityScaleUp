@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '/Users/gpqls/CommunityScaleUp/scaleup/src/main/scaleup-front/src/styles/main/Menubar.css';
 
 
-function Menubar() {
+function Menubar() { //메인 페이지 가운데 메뉴
     return (
         <nav className = 'menubar'>
             <div className = 'menubar-container'>

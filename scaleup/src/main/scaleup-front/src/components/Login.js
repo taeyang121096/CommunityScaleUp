@@ -3,12 +3,11 @@ import '../styles/components/Login.css'
 import {validateId, validatePw, validateWhitespace} from "../utils/validateLogin"
 import axios from 'axios';
 
-function Login() {
+function Login() { //로그인
 
     const [Id, setId] = useState("")
     const [Pw, setPw] = useState("")
     const [disabled, setDisabled] = useState(false); //disabled는 비활성화. false이므로 활성화가 기본.
-    const [loginOpen, setloginOpen] = useState(false);
 
     const handleIdChange = (Id) => {
         setId(Id.currentTarget.value);
@@ -18,11 +17,11 @@ function Login() {
         setPw(Pw.currentTarget.value);
       };
 
-      useEffect(() => {
+      useEffect(() => { //유효성 검사 모두 만족할 때,
         setDisabled(!(validateId(Id) && !(validateWhitespace(Id)) && validatePw(Pw) && !(validateWhitespace(Pw))))
       }, [Id, Pw])
 
-      //로그인 버튼 클릭 시, 정보 보내기
+      //로그인 버튼 클릭 시, 정보 보내기인데 미완성..
       const onClickLogin = (id, password) => {
         axios.post('',null, {
 
@@ -44,7 +43,7 @@ function Login() {
                 </div>
                 <br />
                 <a className='acss' href="">비밀번호를 잊으셨습니까?</a>
-                <button type="submit" disabled={disabled}>
+                <button type="submit" disabled={disabled}> 
                     로그인
                 </button>
             </form>

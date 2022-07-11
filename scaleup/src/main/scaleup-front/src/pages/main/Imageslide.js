@@ -6,7 +6,7 @@ import '/Users/gpqls/CommunityScaleUp/scaleup/src/main/scaleup-front/src/styles/
 import images from '/Users/gpqls/CommunityScaleUp//scaleup/src/main/scaleup-front/src/components/images/img-main.jpg'
 
 
-export default class SimpleSlider extends Component {
+export default class SimpleSlider extends Component { //메인 페이지 가운데 이미지 슬라이드 부분
   render() {
     const settings = {
       dots: true,
