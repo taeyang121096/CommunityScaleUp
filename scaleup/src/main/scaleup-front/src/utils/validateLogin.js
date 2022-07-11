@@ -1,3 +1,5 @@
+//로그인 유효성 검사
+
 //4자리 이상이면 true
 export const validateId = Id => {
     const regex = /^.{4,}$/;

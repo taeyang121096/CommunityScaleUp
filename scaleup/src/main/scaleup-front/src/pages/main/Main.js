@@ -7,11 +7,9 @@ import Menubar from './Menubar';
 function MainPage() {
     return(
     <>
-    <Router>
         <Navbar/>
         <ImagesSlide/>
         <Menubar />
-    </Router>
     </>
     )
 }
