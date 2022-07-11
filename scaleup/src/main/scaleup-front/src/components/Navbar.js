@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import {HashRouter as Router, Routes, Route} from 'react-router-dom';
-import '../styles/Navbar.css';
+import '../styles/components/Navbar.css';
 import Login from "./Login";
 import Signup from "./Signup";
 
