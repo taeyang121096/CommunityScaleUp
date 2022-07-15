@@ -2,6 +2,7 @@ import React, { useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
 import {validateEmail, validateId, validatePw, validateWhitespace, validateName} from '../utils/validateSignup'
 import '../styles/components/Signup.css'
+import Navbar from './Navbar';
 
 function Signup() { //회원가입
 
@@ -48,6 +49,8 @@ function Signup() { //회원가입
 
 
     return (
+      <>
+      <Navbar/>
         <div className='signup-container'>
             <form className='signup-form' >
                 <div className='signup-title' >SIGN UP</div>
@@ -85,8 +88,7 @@ function Signup() { //회원가입
                 </button>
             </form>
         </div>
-
-        
+        </>
     )
 }
 

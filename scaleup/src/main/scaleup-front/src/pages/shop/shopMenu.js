@@ -3,10 +3,13 @@ import '../../styles/shop/shopMenu.css'
 import { Link } from 'react-router-dom';
 import {HashRouter as Router, Routes, Route} from 'react-router-dom';
 
-function shopMenu() { //SHOP 메뉴 (미완성)
+function ShopMenu() { //SHOP 메뉴 (미완성)
     return( 
         <>
-        <div className='container'>
+        <div className='menu-container'>
+            <Link to='/' className = 'category'> 
+                    카테고리
+                </Link>
             <ul className='menu'>
                 <li>
                     <Link to='/clothes' className='menu-links'>
@@ -15,7 +18,7 @@ function shopMenu() { //SHOP 메뉴 (미완성)
                 </li>
                 <li>
                     <Link to='/toy' className='menu-links'>
-                        의류
+                        장난감
                     </Link>
                 </li>
                 <li>
@@ -34,4 +37,4 @@ function shopMenu() { //SHOP 메뉴 (미완성)
 
     );
 }
-export default shopMenu
+export default ShopMenu;

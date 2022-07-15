@@ -1,0 +1,31 @@
+.menu-container{
+    background-color: #fff;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    border-bottom: solid 2px black;
+}
+
+.category{
+    float: left;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu{
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 0px;
+    list-style: none;
+    text-align: center;
+    width: 80vw;
+    justify-content:center;
+    margin-right: 1rem;
+    background-color: rgba(255, 255, 255, 0.219);
+}
