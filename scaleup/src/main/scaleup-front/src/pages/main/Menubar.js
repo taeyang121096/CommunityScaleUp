@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '/Users/gpqls/CommunityScaleUp/scaleup/src/main/scaleup-front/src/styles/main/Menubar.css';
+import '../../styles/main/Menubar.css'
 
 
 function Menubar() { //메인 페이지 가운데 메뉴

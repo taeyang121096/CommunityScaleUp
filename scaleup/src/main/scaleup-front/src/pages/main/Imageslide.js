@@ -2,8 +2,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import React, { Component } from "react";
 import Slider from "react-slick";
-import '/Users/gpqls/CommunityScaleUp/scaleup/src/main/scaleup-front/src/styles/main/Imageslide.css'
-import images from '/Users/gpqls/CommunityScaleUp//scaleup/src/main/scaleup-front/src/components/images/img-main.jpg'
+import '../../styles/main/Imageslide.css'
+import images from '../../components/images/img-main.jpg'
 
 
 export default class SimpleSlider extends Component { //메인 페이지 가운데 이미지 슬라이드 부분
