@@ -8,6 +8,11 @@ import Signup from "./Signup";
 
 function Navbar() { //메인 네비 바
     const [visible, setVisible] = useState(false); //Sign-in 클릭 시, 로그인 창 나타나게 하기.
+    const { pathname } = window.location
+
+    if (pathname === "/sign-up") {
+        return <Signup />
+      }
 
     return ( //아래의 Link 부분이 안됩니다...... 
         <> 
@@ -18,8 +23,8 @@ function Navbar() { //메인 네비 바
                 </Link>
                 <ul className= 'nav-menu'>
                     <li className='nav-item'>
-                        <Link to='/sign-up' className='nav-links'>
-                            SIGN UP
+                        <Link to='/sign-up' className = 'nav-links' > 
+                            SIGN UP 
                         </Link>
                     </li>     
                     <li className='nav-item'>
