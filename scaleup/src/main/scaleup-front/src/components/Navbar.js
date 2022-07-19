@@ -18,7 +18,7 @@ function Navbar() { //메인 네비 바
                 </Link>
                 <ul className= 'nav-menu'>
                     <li className='nav-item'>
-                        <Link to='/sign-up' className='nav-links'>
+                        <Link to='./Signup' className='nav-links'>
                             SIGN UP
                         </Link>
                     </li>     
