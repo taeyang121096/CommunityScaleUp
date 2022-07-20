@@ -5,6 +5,7 @@ import '../styles/components/Navbar.css';
 import Login from "./Login";
 import Signup from "./Signup";
 import MainPage from '../pages/main/Main';
+import ShopMain from '../pages/shop/shopMain';
 
 
 function Navbar() { //메인 네비 바
@@ -12,6 +13,10 @@ function Navbar() { //메인 네비 바
 
     return ( //아래의 Link 부분이 안됩니다...... 
         <>
+        {/* <Routes>
+                <Route path="/" exact={true} element = {<MainPage/>}/>
+                <Route path="/sign-up" element = {<Signup/>}/>
+        </Routes> */}
         <div className='navbar'>
             <div className='navbar-container'>
                 <Link to='/' className = 'navbar-logo' > 

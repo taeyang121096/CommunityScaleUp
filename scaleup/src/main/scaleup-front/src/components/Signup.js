@@ -50,6 +50,7 @@ function Signup() { //회원가입
 
     return (
       <>
+      <Navbar/>
         <div className='signup-container'>
             <form className='signup-form' >
                 <div className='signup-title' >SIGN UP</div>

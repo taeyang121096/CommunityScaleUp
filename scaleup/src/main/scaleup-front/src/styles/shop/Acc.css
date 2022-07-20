@@ -1,28 +1,37 @@
-.shop-main{
 
-}
-
-.shop-container{
+.acc-container{
     position: absolute;
     text-align: center;
     left: 20%;
     right: 20%;
 }
 
-.adv-title{
+.acc-title{
     float: left;
     margin-top: 20px;
+    margin-bottom: 25px;
+    margin-right: 630px;
+}
+
+.best{
     margin-bottom: 20px;
 }
 
-.discount-title{
-    margin-top: 30px;
-    margin-bottom: 20px;
-    margin-right: 500px;
+.best-title{
+    display: block;
+    margin-bottom: 15px;
+}
+
+.acc-list{
+    margin-top: 20px;
+}
+
+.list-title{
     float: left;
+    margin-bottom: 15px;
 }
 
-.discount-img{
+.acc-img, .best-img{
     display: flex;
     width: 100%;
     justify-content: center;
