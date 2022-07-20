@@ -1,3 +1,36 @@
+.shop-main{
+    background-color: aqua;
+}
+
 .shop-container{
-    
+    position: absolute;
+    text-align: center;
+    left: 20%;
+    right: 20%;
+}
+
+.adv-title{
+    background-color:aquamarine;
+    float: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.discount-title{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-right: 500px;
+    float: left;
+    background-color: blue;
+}
+
+.discount-img{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.imglist{
+    margin-left: 6px;
+    margin-right: 6px;
 }

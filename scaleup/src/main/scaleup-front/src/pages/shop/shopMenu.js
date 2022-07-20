@@ -2,11 +2,13 @@ import React from 'react';
 import '../../styles/shop/shopMenu.css'
 import { Link } from 'react-router-dom';
 import {HashRouter as Router, Routes, Route} from 'react-router-dom';
+import { TbMenu2 } from "react-icons/tb";
 
 function ShopMenu() { //SHOP 메뉴 (미완성)
     return( 
         <>
         <div className='menu-container'>
+        <TbMenu2 size="20"/>
             <Link to='/' className = 'category'> 
                     카테고리
                 </Link>
