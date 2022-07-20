@@ -4,18 +4,14 @@ import {HashRouter as Router, Routes, Route} from 'react-router-dom';
 import '../styles/components/Navbar.css';
 import Login from "./Login";
 import Signup from "./Signup";
+import MainPage from '../pages/main/Main';
 
 
 function Navbar() { //메인 네비 바
     const [visible, setVisible] = useState(false); //Sign-in 클릭 시, 로그인 창 나타나게 하기.
-    const { pathname } = window.location
-
-    if (pathname === "/sign-up") {
-        return <Signup />
-      }
 
     return ( //아래의 Link 부분이 안됩니다...... 
-        <> 
+        <>
         <div className='navbar'>
             <div className='navbar-container'>
                 <Link to='/' className = 'navbar-logo' > 
