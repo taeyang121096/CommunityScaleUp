@@ -1,6 +1,5 @@
 import React from 'react'
 import {HashRouter, BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import Navbar from '../../components/Navbar';
 import ShopMenu from './shopMenu';
 import ShopNavbar from './shopNavbar';
 import '../../styles/shop/shopMain.css'

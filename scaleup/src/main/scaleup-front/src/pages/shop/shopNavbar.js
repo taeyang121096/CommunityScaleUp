@@ -31,7 +31,7 @@ function ShopNavbar() { //메인 네비 바
                         </Link>
                     </li>      
                     <li className='nav-item'>
-                        <Link to='../../components/Signup' className='nav-links'>
+                        <Link to='/sign-up' className='nav-links'>
                             SIGN UP
                         </Link>
                     </li>     
