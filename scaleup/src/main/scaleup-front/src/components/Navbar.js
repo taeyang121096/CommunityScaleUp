@@ -36,9 +36,7 @@ function Navbar() { //메인 네비 바
                 </ul>
             </div>
         </div>
-        <div>
         {visible && <Login />}
-        </div>
         </>
     );
 }

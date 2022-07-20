@@ -1,15 +1,15 @@
 .container{
-    display:block;
     float: right;
-    height: 86.5vh;
+    height: 100vh;
     border-top: 4px solid black;
     border-left: 4px solid black;
     border-bottom : 4px solid black;
     border-radius: 0 0 0 20px;
+
 }
 
 .loginForm{
-    display: flex;
+    display:flex;
     flex-direction: column;
     margin-top: 20px;
     margin-right: 20px;

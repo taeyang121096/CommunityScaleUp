@@ -5,6 +5,7 @@ import '../../styles/shop/shopNavbar.css';
 import Signup from "../../components/Signup";
 import Login from "../../components/Login";
 import MainPage from '../main/Main';
+import ShopMenu from './shopMenu';
 
 function ShopNavbar() { //메인 네비 바
     const [visible, setVisible] = useState(false); //Sign-in 클릭 시, 로그인 창 나타나게 하기.
@@ -52,9 +53,8 @@ function ShopNavbar() { //메인 네비 바
                 </ul>
             </div>
         </div>
-        <div>
+        <ShopMenu/>
         {visible && <Login />}
-        </div>
         </>
     );
 }

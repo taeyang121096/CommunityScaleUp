@@ -8,7 +8,6 @@ function ShopMain() { //SHOP 메인 페이지
     return(
         <>
         <ShopNavbar/>
-        <ShopMenu/>
         <div className='shop-container'>
             <div>
                 <h2>밤달샵</h2>

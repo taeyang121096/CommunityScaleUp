@@ -30,7 +30,7 @@ function Login() { //로그인
 
 
     return (
-        <div className='container'>
+         <div className='container'>
             <form className='loginForm' action="" method="post">
                 <div className='title'>SIGN IN</div>
                 <div className='hr'>
@@ -47,7 +47,7 @@ function Login() { //로그인
                     로그인
                 </button>
             </form>
-        </div>
+         </div>
     )
 }
 
