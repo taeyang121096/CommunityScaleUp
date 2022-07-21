@@ -1,5 +1,10 @@
+.acc-main{
+    display: flex;
+}
+
 
 .acc-container{
+    flex: 1;
     position: absolute;
     text-align: center;
     left: 20%;
@@ -10,7 +15,6 @@
     float: left;
     margin-top: 20px;
     margin-bottom: 25px;
-    margin-right: 630px;
 }
 
 .best{
@@ -18,8 +22,11 @@
 }
 
 .best-title{
-    display: block;
+    display:block;
+    float: right;
     margin-bottom: 15px;
+    margin-top: 70px;
+    margin-right: 42%;
 }
 
 .acc-list{
