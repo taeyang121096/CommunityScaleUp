@@ -6,12 +6,15 @@ import ShopMain from './pages/shop/shopMain';
 import CoummunityMain from './pages/community/communityMain';
 import CoummunityNavbar from './pages/community/communityNavbar';
 import Acc from './pages/shop/Acc';
+import Toy from './pages/shop/Toy';
+import Clothes from './pages/shop/Clothes';
+import Food from './pages/shop/Food';
 
 function App() {
   return (
     <>
     <Router>
-      <Acc/>
+      <Food/>
       </Router>
     </>
   );

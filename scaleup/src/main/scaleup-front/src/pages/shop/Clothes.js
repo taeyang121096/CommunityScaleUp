@@ -2,16 +2,16 @@ import React from 'react'
 import {HashRouter, BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import ShopNavbar from './shopNavbar';
 import Sidebar from './Sidebar';
-import '../../styles/shop/Toy.css'
+import '../../styles/shop/Clothes.css'
 
-function Toy() {
+function Clothes() {
     return(
         <>
         <ShopNavbar/>
-        <div className='toy-main'>
+        <div className='clothes-main'>
             <Sidebar/>
-            <div className='toy-container'>
-            <h1 className='toy-title'>장난감</h1>
+            <div className='clothes-container'>
+            <h1 className='clothes-title'>의류</h1>
                 <div className='best'>
                 <h2 className='best-title'>오늘의 BEST</h2>
                     <div className='best-img'>
@@ -38,9 +38,9 @@ function Toy() {
                 </div>
                 </div>
                 <hr></hr>
-                <div className='toy-list'>
+                <div className='clothes-list'>
                     <h4 className='list-title'>????개의 상품</h4>
-                    <div className='toy-img'>
+                    <div className='clothes-img'>
                     <div className='imglist'>
                         <img src='https://via.placeholder.com/180x200'/>
                         후르츠 봉봉 원피스
@@ -68,4 +68,4 @@ function Toy() {
         </>
     );
 }
-export default Toy
+export default Clothes

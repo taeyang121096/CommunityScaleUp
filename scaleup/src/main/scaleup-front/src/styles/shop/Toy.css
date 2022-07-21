@@ -1,9 +1,9 @@
-.acc-main{
+.toy-main{
     display: flex;
 }
 
 
-.acc-container{
+.toy-container{
     flex: 1;
     position: absolute;
     text-align: center;
@@ -11,7 +11,7 @@
     right: 20%;
 }
 
-.acc-title{
+.toy-title{
     float: left;
     margin-top: 20px;
     margin-bottom: 25px;
@@ -29,7 +29,7 @@
     margin-right: 42%;
 }
 
-.acc-list{
+.toy-list{
     margin-top: 20px;
 }
 
@@ -38,7 +38,7 @@
     margin-bottom: 15px;
 }
 
-.acc-img, .best-img{
+.toy-img, .best-img{
     display: flex;
     width: 100%;
     justify-content: center;
