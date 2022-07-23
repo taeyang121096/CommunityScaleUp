@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/shop/shopMenu.css'
+import '../../../styles/community/components/communityMenu.css';
 import { Link } from 'react-router-dom';
 import {HashRouter as Router, Routes, Route} from 'react-router-dom';
 

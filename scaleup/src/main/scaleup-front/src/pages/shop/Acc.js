@@ -1,15 +1,15 @@
 import React from 'react'
 import {HashRouter, BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import ShopNavbar from './shopNavbar';
-import Sidebar from './Sidebar';
 import '../../styles/shop/Acc.css'
+import ShopNavbar from './components/shopNavbar';
+import Sidebar from './components/Sidebar';
 
 function Acc(){
     return(
         <>
         <ShopNavbar/>
         <div className='acc-main'>
-        <Sidebar/>
+            <Sidebar/>
             <div className='acc-container'>
             <h1 className='acc-title'>액세서리</h1>
                 <div className='best'>

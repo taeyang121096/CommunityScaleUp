@@ -1,10 +1,10 @@
 import React, { useState} from 'react';
 import { Link } from 'react-router-dom';
 import {HashRouter as Router, Routes, Route} from 'react-router-dom';
-import '../../styles/community/communityNavbar.css'
-import Signup from "../../components/Signup";
-import Login from "../../components/Login";
-import MainPage from '../main/Main';
+import '../../../styles/community/components/communityNavbar.css'
+import Signup from "../../../components/Signup";
+import Login from "../../../components/Login";
+import MainPage from '../../main/Main';
 import CoummunityMenu from './communityMenu';
 
 function CoummunityNavbar() { //메인 네비 바

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/community/communityMenu.css'
+import '../../../styles/shop/components/shopMenu.css';
 import { Link } from 'react-router-dom';
 import {HashRouter as Router, Routes, Route} from 'react-router-dom';
 import { TbMenu2 } from "react-icons/tb";

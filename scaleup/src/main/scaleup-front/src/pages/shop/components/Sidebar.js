@@ -1,7 +1,7 @@
 import React from 'react';
 import {Navigation} from 'react-minimal-side-navigation';
 import 'react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css';
-import '../../styles/shop/Sidebar.css'
+import '../../../styles/shop/components/Sidebar.css';
 
 function Sidebar() {
     return(

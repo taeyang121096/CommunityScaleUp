@@ -1,8 +1,9 @@
 import React from 'react'
 import {HashRouter, BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import ShopNavbar from './shopNavbar';
-import Sidebar from './Sidebar';
 import '../../styles/shop/Clothes.css'
+import ShopNavbar from './components/shopNavbar';
+import Sidebar from './components/Sidebar';
+
 
 function Clothes() {
     return(

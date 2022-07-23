@@ -1,13 +1,13 @@
 import React, { useState} from 'react';
 import { Link } from 'react-router-dom';
 import {HashRouter as Router, Routes, Route} from 'react-router-dom';
-import '../../styles/shop/shopNavbar.css';
-import Signup from "../../components/Signup";
-import Login from "../../components/Login";
-import MainPage from '../main/Main';
+import '../../../styles/shop/components/shopNavbar.css';
+import Signup from "../../../components/Signup";
+import Login from "../../../components/Login";
+import MainPage from '../../main/Main';
 import ShopMenu from './shopMenu';
-import ShopMain from './shopMain';
-import CoummunityMain from '../community/communityMain';
+import ShopMain from '../shopMain';
+import CoummunityMain from '../../community/communityMain';
 
 function ShopNavbar() { //메인 네비 바
     const [visible, setVisible] = useState(false); //Sign-in 클릭 시, 로그인 창 나타나게 하기.
