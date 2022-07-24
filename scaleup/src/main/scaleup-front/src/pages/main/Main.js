@@ -3,6 +3,7 @@ import {HashRouter as Router, Routes, Route} from 'react-router-dom';
 import Navbar from '../../components/Navbar'
 import ImagesSlide from './Imageslide';
 import Menubar from './Menubar';
+import Signup from '../../components/Signup';
 
 function MainPage() {
     return(

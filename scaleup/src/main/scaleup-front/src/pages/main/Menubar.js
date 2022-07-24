@@ -3,14 +3,12 @@ import { Link } from 'react-router-dom';
 import {HashRouter as Router, Routes, Route} from 'react-router-dom';
 import '../../styles/main/Menubar.css'
 import ShopMain from '../shop/shopMain';
+import CoummunityMain from '../community/communityMain';
 
 
 function Menubar() { //메인 페이지 가운데 메뉴
     return (
         <>
-        <Routes>
-                <Route path="/shop" element = {<ShopMain/>}/>
-        </Routes>
         <nav className = 'menubar'>
             <div className = 'menubar-container'>
                     <li className='menu-item'>

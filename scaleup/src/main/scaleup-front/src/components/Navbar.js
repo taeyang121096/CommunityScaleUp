@@ -11,12 +11,8 @@ import ShopMain from '../pages/shop/shopMain';
 function Navbar() { //메인 네비 바
     const [visible, setVisible] = useState(false); //Sign-in 클릭 시, 로그인 창 나타나게 하기.
 
-    return ( //아래의 Link 부분이 안됩니다...... 
+    return ( 
         <>
-        {/* <Routes>
-                <Route path="/" exact={true} element = {<MainPage/>}/>
-                <Route path="/sign-up" element = {<Signup/>}/>
-        </Routes> */}
         <div className='navbar'>
             <div className='navbar-container'>
                 <Link to='/' className = 'navbar-logo' > 
