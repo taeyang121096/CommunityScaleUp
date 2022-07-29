@@ -23,9 +23,14 @@ function Login() { //로그인
 
       //로그인 버튼 클릭 시, 정보 보내기인데 미완성..
       const onClickLogin = (id, password) => {
-        axios.post('',null, {
-
-        })
+          axios({
+              method: 'post',
+              url: '/api/user/login',
+              data: {
+                  userId: id,
+                  pw: password
+              }
+          });
       }
 
 
@@ -43,7 +48,7 @@ function Login() { //로그인
                 </div>
                 <br />
                 <a className='acss' href="">비밀번호를 잊으셨습니까?</a>
-                <button type="submit" disabled={disabled}> 
+                <button type="submit" disabled={disabled} onClick={onClickLogin(Id, Pw)}>
                     로그인
                 </button>
             </form>
