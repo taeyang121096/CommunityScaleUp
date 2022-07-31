@@ -9,6 +9,9 @@ import Clothes from './pages/shop/Clothes';
 import ShopMain from './pages/shop/shopMain';
 import CoummunityMain from './pages/community/communityMain';
 import Signup from './components/Signup';
+import Login from './components/Login';
+import Bulletinboard2 from './pages/community/Bulletinboard2'
+import Bulletinboard1 from './pages/community/Bulletinboard1';
 
 function App() {
   return (
@@ -17,12 +20,15 @@ function App() {
     <Routes>
                 <Route path="/" exact={true} element = {<MainPage/>}/>
                 <Route path="/sign-up" element = {<Signup/>}/>
+                <Route path="/sign-in" element = {<Login/>}/>
                 <Route path="/shop" element = {<ShopMain/>}/>
-                <Route path="/community" element = {<CoummunityMain/>}/>
                 <Route path="/acc" element = {<Acc/>}/>
                 <Route path="/toy" element = {<Toy/>}/>
                 <Route path="/food" element = {<Food/>}/>
                 <Route path="/clothes" element = {<Clothes/>}/>
+                <Route path="/community" element = {<CoummunityMain/>}/>
+                <Route path="/bulletinboard2" element = {<Bulletinboard2/>}/>
+                <Route path="/bulletinboard1" element = {<Bulletinboard1/>}/>
         </Routes>
       </Router>
     </>

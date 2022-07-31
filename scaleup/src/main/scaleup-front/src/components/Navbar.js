@@ -22,8 +22,8 @@ function Navbar() { //메인 네비 바
                             </Link>
                         </li>
                         <li className='nav-item'>
-                            <Link to='' className='nav-links' >
-                                <button className='sign-in' onClick={() => { setVisible(!visible) }}>SIGN IN</button>
+                            <Link to='/sign-in' className='nav-links' >
+                                SIGN IN
                             </Link>
                         </li>
                         <li className='nav-item'>

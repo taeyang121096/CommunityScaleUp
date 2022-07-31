@@ -31,6 +31,7 @@ public class UserController {
     @PostMapping("/user/login")
     public ResponseEntity<UserResponse> login(@RequestBody @Valid LoginRequest request) {
         UserResponse response = userService.login(request);
+        System.out.println("로그인 성공");
         return ResponseEntity.ok(response);
     }
 }
