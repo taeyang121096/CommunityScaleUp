@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import '../styles/components/Login.css'
 import {validateId, validatePw, validateWhitespace} from "../utils/validateLogin"
 import axios from 'axios';
+import Navbar from './Navbar'
 
 function Login() { //로그인
 
@@ -38,6 +39,8 @@ function Login() { //로그인
     }
 
     return (
+        <>
+        <Navbar/>
         <div className='container'>
             <form className='loginForm' action="" method="post">
                 <div className='title'>SIGN IN</div>
@@ -59,6 +62,7 @@ function Login() { //로그인
                 </button>
             </form>
         </div>
+        </>
     )
 }
 
