@@ -2,7 +2,8 @@ import React, {useState, useEffect} from 'react'
 import '../styles/components/Login.css'
 import {validateId, validatePw, validateWhitespace} from "../utils/validateLogin"
 import axios from 'axios';
-import Navbar from './Navbar'
+import {Link, useNavigate} from "react-router-dom";
+import Navbar from './Navbar';
 
 function Login() { //로그인
 
@@ -10,6 +11,7 @@ function Login() { //로그인
     const [Id, setId] = useState("")
     const [Pw, setPw] = useState("")
     const [disabled, setDisabled] = useState(false); //disabled는 비활성화. false이므로 활성화가 기본.
+
 
     const handleIdChange = (Id) => {
         setId(Id.currentTarget.value);
@@ -24,17 +26,18 @@ function Login() { //로그인
     }, [Id, Pw])
 
     const onClickLogin = () => {
-        const url = "http://localhost:8080/api/user/login";
+        const url = "/api/user/login";
         const sendParam = {
             userId: Id,
             pw: Pw
         }
         axios.post(url, sendParam)
             .then((res) => {
-                console.log(res)
+                console.log(res);                
             })
             .catch((error) => {
-                console.log(error.response)
+                console.log(error.response);
+                alert('아이디, 비밀번호가 일치하지 않습니다.');
             })
     }
 
@@ -54,11 +57,11 @@ function Login() { //로그인
                 </div>
                 <br/>
                 <a className='acss' href="">비밀번호를 잊으셨습니까?</a>
-                <button
+                <button className='btn'
                     type="submit"
                     disabled={disabled}
                     onClick={onClickLogin}>
-                    로그인
+                    로그
                 </button>
             </form>
         </div>
