@@ -4,21 +4,21 @@ import {HashRouter as Router, Routes, Route} from 'react-router-dom';
 import '../../../styles/community/components/communityNavbar.css'
 import Signup from "../../../components/Signup";
 import Login from "../../../components/Login";
-import ShopMain from '../../shop/shopMain';
-import CoummunityMenu from './communityMenu';
-import CoummunityMain from '../communityMain';
+import CommunityMenu from './communityMenu';
+
 
 function CommunityNavbar() { //메인 네비 바
     const [visible, setVisible] = useState(false); //Sign-in 클릭 시, 로그인 창 나타나게 하기.
 
     return ( //아래의 Link 부분이 안됩니다...... 
         <> 
+        
         <div className='navbar'>
             <div className='navbar-container'>
                 <Link to='/' className = 'navbar-logo' > 
                     BAMDAL 
                 </Link>
-                <div className='currentPage-coummunity'>
+                <div className='currentPage-community'>
                     COMMUNITY
                 </div>
                 <ul className= 'nav-menu'>

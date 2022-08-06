@@ -1,23 +1,61 @@
 import React from 'react'
-import {HashRouter, BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import '../../styles/community/BulletinBoard02.css'
+import { HashRouter, BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import CommunityNavbar from './components/communityNavbar';
-import Sidebar from './components/Sidebar';
+import '../../styles/community/Bulletinboard02.css'
 
-function BulletinBoard02(){
-    return(
+function Bulletinboard02() {
+    return (
         <>
-        <CommunityNavbar/>
-        <div className='board-main'>
-            <Sidebar/>
-            <div className='board-container'>
-            <h1 className='board-title'>보드 2 확인용</h1>
+            <CommunityNavbar />
+            <div className='board2_main'>
+                <div className='board2_container'>
+                    <h2>게시판2</h2>
+                    <table className='board_table'>
+                        <thead>
+                            <tr>
+                                <th>글번호</th>
+                                <th>제목</th>
+                                <th>등록일</th>
+                                <th>조회수</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>첫번째 게시글입니다.</td>
+                                <td>2020-10-25</td>
+                                <td>6</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>두번째 게시글입니다.</td>
+                                <td>2020-10-25</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>세번째 게시글입니다.</td>
+                                <td>2020-10-25</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>네번째 게시글입니다.</td>
+                                <td>2020-10-25</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>다섯번째 게시글입니다.</td>
+                                <td>2020-10-25</td>
+                                <td>4</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
-                        
         </>
-    )
+    );
 
 }
-
-export default BulletinBoard02
+export default Bulletinboard02

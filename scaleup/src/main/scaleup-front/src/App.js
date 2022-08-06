@@ -11,7 +11,8 @@ import Toy from './pages/shop/Toy';
 import Acc from './pages/shop/Acc';
 import Clothes from './pages/shop/Clothes';
 import ShopMain from './pages/shop/shopMain';
-import CoummunityMain from './pages/community/communityMain';
+import CommunityMain from './pages/community/components/communityMain';
+import CommunityMenu from './pages/community/components/communityMenu';
 import Signup from './components/Signup';
 
 
@@ -22,16 +23,17 @@ function App() {
     <Routes>
                 <Route path="/" exact={true} element = {<MainPage/>}/>
                 <Route path="/sign-up" element = {<Signup/>}/>
-                <Route path="/sign-in" element = {<Login/>}/>
                 <Route path="/shop" element = {<ShopMain/>}/>
+                <Route path="/communitymain" element = {<CommunityMain/>}/>
+                <Route path="/communitymenu" element = {<CommunityMenu/>}/>
                 <Route path="/acc" element = {<Acc/>}/>
                 <Route path="/toy" element = {<Toy/>}/>
                 <Route path="/food" element = {<Food/>}/>
                 <Route path="/clothes" element = {<Clothes/>}/>
-                <Route path="/bulletinboard1" element = {<BulletinBoard01/>} />
-                <Route path="/bulletinboard2" element = {<BulletinBoard02/>} /> 
-                <Route path="/bulletinboard3" element = {<BulletinBoard03/>} /> 
-                <Route path="/bulletinboard4" element = {<BulletinBoard04/>} /> 
+                <Route path="/bulletinboard01" element = {<BulletinBoard01/>} />
+                <Route path="/bulletinboard02" element = {<BulletinBoard02/>} /> 
+                <Route path="/bulletinboard03" element = {<BulletinBoard03/>} /> 
+                <Route path="/bulletinboard04" element = {<BulletinBoard04/>} /> 
                 
                 
         </Routes>
