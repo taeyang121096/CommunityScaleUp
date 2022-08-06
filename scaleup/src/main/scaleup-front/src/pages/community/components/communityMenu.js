@@ -3,7 +3,7 @@ import '../../../styles/community/components/communityMenu.css';
 import { Link } from 'react-router-dom';
 import {HashRouter as Router, Routes, Route} from 'react-router-dom';
 
-function CoummunityMenu() { 
+function CommunityMenu() { 
     return( 
         <>
         <div className='coummunity-container'>
@@ -34,4 +34,4 @@ function CoummunityMenu() {
 
     );
 }
-export default CoummunityMenu;
+export default CommunityMenu;
