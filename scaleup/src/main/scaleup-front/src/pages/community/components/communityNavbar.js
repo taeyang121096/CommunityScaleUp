@@ -5,9 +5,9 @@ import '../../../styles/community/components/communityNavbar.css'
 import Signup from "../../../components/Signup";
 import Login from "../../../components/Login";
 import MainPage from '../../main/Main';
-import CoummunityMenu from './communityMenu';
+import CommunityMenu from './communityMenu';
 
-function CoummunityNavbar() { //메인 네비 바
+function CommunityNavbar() { //메인 네비 바
     const [visible, setVisible] = useState(false); //Sign-in 클릭 시, 로그인 창 나타나게 하기.
 
     return ( //아래의 Link 부분이 안됩니다...... 
@@ -54,10 +54,10 @@ function CoummunityNavbar() { //메인 네비 바
                 </ul>
             </div>
         </div>
-        <CoummunityMenu/>
+        <CommunityMenu/>
         {visible && <Login />}
         </>
     );
 }
 
-export default CoummunityNavbar
+export default CommunityNavbar
