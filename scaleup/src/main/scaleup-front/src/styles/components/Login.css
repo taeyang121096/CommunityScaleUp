@@ -1,10 +1,14 @@
 .container{
-    float: right;
+    /* float: right; */
+    display: flex;
     height: 100vh;
-    border-top: 4px solid black;
+    justify-content: center; 
+    align-items: center;
+    width: 100%; 
+    /* border-top: 4px solid black;
     border-left: 4px solid black;
     border-bottom : 4px solid black;
-    border-radius: 0 0 0 20px;
+    border-radius: 0 0 0 20px; */
 
 }
 

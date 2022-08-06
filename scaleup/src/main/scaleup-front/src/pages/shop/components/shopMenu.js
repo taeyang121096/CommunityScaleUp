@@ -3,6 +3,10 @@ import '../../../styles/shop/components/shopMenu.css';
 import { Link } from 'react-router-dom';
 import {HashRouter as Router, Routes, Route} from 'react-router-dom';
 import { TbMenu2 } from "react-icons/tb";
+import Acc from '../Acc';
+import Clothes from '../Clothes';
+import Toy from '../Toy';
+import Food from '../Food';
 
 function ShopMenu() { //SHOP 메뉴 (미완성)
     return( 

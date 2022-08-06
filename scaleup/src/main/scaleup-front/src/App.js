@@ -22,8 +22,8 @@ function App() {
     <Routes>
                 <Route path="/" exact={true} element = {<MainPage/>}/>
                 <Route path="/sign-up" element = {<Signup/>}/>
+                <Route path="/sign-in" element = {<Login/>}/>
                 <Route path="/shop" element = {<ShopMain/>}/>
-                <Route path="/community" element = {<CoummunityMain/>}/>
                 <Route path="/acc" element = {<Acc/>}/>
                 <Route path="/toy" element = {<Toy/>}/>
                 <Route path="/food" element = {<Food/>}/>
