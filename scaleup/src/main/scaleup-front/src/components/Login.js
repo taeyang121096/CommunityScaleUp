@@ -33,11 +33,13 @@ function Login() { //로그인
         }
         axios.post(url, sendParam)
             .then((res) => {
-                console.log(res);                
+                console.log(res);
+                window.location.href = "/";              
             })
             .catch((error) => {
                 console.log(error.response);
                 alert('아이디, 비밀번호가 일치하지 않습니다.');
+                window.location.reload();
             })
     }
 
@@ -61,7 +63,7 @@ function Login() { //로그인
                     type="submit"
                     disabled={disabled}
                     onClick={onClickLogin}>
-                    로그
+                    로그인
                 </button>
             </form>
         </div>
