@@ -6,7 +6,7 @@ import Signup from "../../../components/Signup";
 import Login from "../../../components/Login";
 import ShopMenu from './shopMenu';
 import ShopMain from '../shopMain';
-import CoummunityMain from '../../community/communityMain';
+import CommunityMain from '../../community/communityMain';
 import Acc from '../Acc';
 import Clothes from '../Clothes';
 import Toy from '../Toy';

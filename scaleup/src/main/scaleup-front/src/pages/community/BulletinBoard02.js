@@ -1,12 +1,12 @@
 import React from 'react'
 import { HashRouter, BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import CoummunityNavbar from './components/communityNavbar';
-import '../../styles/community/Bulletinboard2.css'
+import CommunityNavbar from './components/communityNavbar';
+import '../../styles/community/Bulletinboard02.css'
 
-function Bulletinboard2() {
+function Bulletinboard02() {
     return (
         <>
-            <CoummunityNavbar />
+            <CommunityNavbar />
             <div className='board2_main'>
                 <div className='board2_container'>
                     <h2>게시판2</h2>
@@ -58,4 +58,4 @@ function Bulletinboard2() {
     );
 
 }
-export default Bulletinboard2
+export default Bulletinboard02
