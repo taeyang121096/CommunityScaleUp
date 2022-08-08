@@ -9,7 +9,6 @@ function CommunityMain(){ //community 메인 페이지
     return(
     <>
         <CommunityNavbar/>
-        <CommunityMenu/>        
     </>
     )
 
