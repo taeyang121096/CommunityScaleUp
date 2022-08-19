@@ -2,15 +2,9 @@ import React, { useState} from 'react';
 import { Link } from 'react-router-dom';
 import {HashRouter as Router, Routes, Route} from 'react-router-dom';
 import '../../../styles/shop/components/shopNavbar.css';
-import Signup from "../../../components/Signup";
 import Login from "../../../components/Login";
 import ShopMenu from './shopMenu';
-import ShopMain from '../shopMain';
-import CommunityMain from '../../community/communityMain';
-import Acc from '../Acc';
-import Clothes from '../Clothes';
-import Toy from '../Toy';
-import Food from '../Food';
+
 
 
 function ShopNavbar() { //메인 네비 바
@@ -28,7 +22,7 @@ function ShopNavbar() { //메인 네비 바
                 </div>
                 <ul className= 'nav-menu'>
                     <li className='nav-item'>
-                        <Link to='/community' className='nav-links'>
+                        <Link to='/communitymain' className='nav-links'>
                             COMMUNITY
                         </Link>
                     </li>
@@ -43,7 +37,7 @@ function ShopNavbar() { //메인 네비 바
                         </Link>
                     </li>     
                     <li className='nav-item'>
-                        <Link to='/sign-in' className='nav-links' onClick = {() => {setVisible(!visible)}}>
+                        <Link to='/sign-in' className='nav-links'>
                             SIGN IN
                         </Link>                 
                     </li>

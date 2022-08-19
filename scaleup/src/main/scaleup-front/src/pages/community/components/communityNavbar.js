@@ -38,7 +38,7 @@ function CommunityNavbar() { //메인 네비 바
                         </Link>
                     </li>     
                     <li className='nav-item'>
-                        <Link to='/sign-in' className='nav-links' onClick = {() => {setVisible(!visible)}}>
+                        <Link to='/sign-in' className='nav-links'>
                             SIGN IN
                         </Link>                 
                     </li>

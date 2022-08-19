@@ -9,7 +9,6 @@ function BulletinBoard04(){
         <>
         <CommunityNavbar/>
         <div className='board-main'>
-            <Sidebar/>
             <div className='board-container'>
             <h1 className='board-title'>보드 4 확인용</h1>
             </div>

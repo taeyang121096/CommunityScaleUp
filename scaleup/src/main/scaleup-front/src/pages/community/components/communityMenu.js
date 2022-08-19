@@ -26,7 +26,7 @@ function CommunityMenu() {
                     </Link>
                 </li>
                 <li>
-                    <Link to='/bulletinboard03' className='menu-links'>
+                    <Link to='/bulletinboard04' className='menu-links'>
                         게시판4
                     </Link>
                 </li>
