@@ -1,6 +1,8 @@
 package com.scaleup.authentication.entity;
 
 import lombok.*;
+import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.DynamicInsert;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -35,6 +37,7 @@ public class Files {
 
     @NotNull
     @Column(name = "item_no")
+
     private Long itemNo;
 
     //==비즈니스 로직==//
@@ -48,5 +51,9 @@ public class Files {
 
     public void setItemNo(Long no) {
         this.itemNo = no;
+    }
+
+    public void setUseYn(String y) {
+        this.useYn = y;
     }
 }

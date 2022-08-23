@@ -31,7 +31,7 @@ public class ItemServiceImpl implements ItemService {
     private final FileRepository fileRepository;
     private final ItemDetailRepository itemDetailRepository;
 
-    @Value("${resource.path}")
+    @Value("${custom.path.resource-path}")
     private String path;
 
     // 리액트 iframe 여러 파일을 다운로드 받을 수 있다고함, 반복문으로 한번에 여러개 하면 될줄 알았건만 http는 한번만 보낼수 있다고 함
@@ -97,10 +97,15 @@ public class ItemServiceImpl implements ItemService {
                     .itemNo(saveItem.getNo())
                     .itemPrice(itemRequest.getItemPrice())
                     .quantity(itemRequest.getQuantity())
+                    .itemInfo(itemRequest.getItemInfo())
+                    .itemProduceInfo(itemRequest.getItemProduceInfo())
+                    .itemRegisteDate(LocalDateTime.now())
+                    .itemSize(itemRequest.getItemSize())
                     .build());
 
             for (Files f : itemFiles) {
                 f.setItemNo(saveItem.getNo());
+                f.setUseYn("Y");
                 list.add(fileRepository.save(f));
             }
 
@@ -148,6 +153,7 @@ public class ItemServiceImpl implements ItemService {
         List<Files> fileInfos = uploadFiles(multipartFile);
         for (Files f : fileInfos) {
             f.setItemNo(item.getNo());
+            f.setUseYn("Y");
             list.add(fileRepository.save(f));
         }
         // id 에 해당하는 애들 변경감지

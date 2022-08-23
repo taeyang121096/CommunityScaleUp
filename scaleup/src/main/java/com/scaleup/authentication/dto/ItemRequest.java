@@ -17,4 +17,10 @@ public class ItemRequest {
     private int itemPrice;
     @NotNull
     private int quantity;
+    @NotNull
+    private String itemInfo;
+    @NotNull
+    private String itemProduceInfo;
+    @NotNull
+    private String itemSize;
 }

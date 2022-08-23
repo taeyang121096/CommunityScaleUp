@@ -26,14 +26,14 @@ public class ItemDetail {
     @Column(name = "item_detail_price")
     private int itemPrice;
     @NotNull
+    @Column(name = "item_detail_quantity")
+    private int quantity;
+    @NotNull
     @Column(name = "item_detail_size")
     private String itemSize;
     @NotNull
     @Column(name = "item_detail_info")
     private String itemInfo;
-    @NotNull
-    @Column(name = "item_detail_quantity")
-    private int quantity;
     @NotNull
     @Column(name = "item_detail_produce_info")
     private String itemProduceInfo;
