@@ -56,12 +56,12 @@ public class BoardController {
             return new ResponseEntity<String>("success", HttpStatus.OK);
     }
 
-    /**
-     * 게시판 list 가져오기
-     */
-    @GetMapping("/board/list")
-    public ResponseEntity<?> getBoardList(@RequestParam(value = "page", defaultValue = "0") int page) {
-        Page<Board> paging = this.boardService.getList(page);
-        return ResponseEntity.ok(paging);
-    }
+//    /**
+//     * 게시판 list 가져오기
+//     */
+//    @GetMapping("/board/list")
+//    public ResponseEntity<?> getBoardList(@RequestParam(value = "page", defaultValue = "0") int page) {
+//        Page<Board> paging = this.boardService.getList(page);
+//        return ResponseEntity.ok(paging);
+//    }
 }

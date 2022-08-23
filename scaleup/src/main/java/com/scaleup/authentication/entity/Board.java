@@ -14,25 +14,25 @@ import java.time.LocalDateTime;
 public class Board {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "board_no")
+    @Column(name = "boards_no")
     private Long no;
 
-    @Column(name = "board_userNo")
+    @Column(name = "boards_userNo")
     private Long userNo;
-    @Column(name = "board_writer")
+    @Column(name = "boards_writer")
     private String writer;
-    @Column(name = "board_title")
+    @Column(name = "boards_title")
     private String title;
-    @Column(name = "board_content")
+    @Column(name = "boards_content")
     private String content;
-    @Column(name = "board_views")
+    @Column(name = "boards_views")
     private Integer views;
-    @Column(name = "board_category")
+    @Column(name = "boards_category")
     private String category;
 
-    @Column(name = "board_create_date")
+    @Column(name = "boards_create_date")
     private LocalDateTime createDate;
-    @Column(name = "board_update_date")
+    @Column(name = "boards_update_date")
     private LocalDateTime updateDate;
 
 

@@ -79,14 +79,14 @@ public class BoardServiceImpl implements BoardService {
             return false;
     }
 
-    @Override
-    public Page<Board> getList(int page) {
-        List<Sort.Order> sorts = new ArrayList<>();
-        sorts.add(Sort.Order.desc("createTime"));
-        PageRequest pageable = PageRequest.of(page, 5, Sort.by(sorts));
-
-        return this.boardRepository.findAll(pageable);
-    }
+//    @Override
+//    public Page<Board> getList(int page) {
+//        List<Sort.Order> sorts = new ArrayList<>();
+//        sorts.add(Sort.Order.desc("createTime"));
+//        PageRequest pageable = PageRequest.of(page, 5, Sort.by(sorts));
+//
+//        return this.boardRepository.findAll(pageable);
+//    }
     // Request 가 오면
 
 }

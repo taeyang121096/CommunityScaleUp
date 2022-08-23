@@ -16,5 +16,5 @@ public interface BoardService {
 
     boolean deletePost(Long boardNo);
 
-    Page<Board> getList(int page);
+//    Page<Board> getList(int page);
 }
