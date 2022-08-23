@@ -1,21 +1,22 @@
 package com.scaleup.authentication.entity;
 
-
 import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
 @Entity
+@Builder
 @Getter
 @Table(name = "users")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id")
-    private Long id;
+    @Column(name = "user_no")
+    private Long no;
     @NotNull
     @Column(name = "user_name", length = 15)
     private String name;
@@ -34,16 +35,4 @@ public class User {
     @NotNull
     @Column(name = "user_role", length = 10)
     private String role;
-
-    @Builder
-    public User(String name, String email, String userId, String pw, String sex, String role) {
-        this.name = name;
-        this.email = email;
-        this.userId = userId;
-        this.pw = pw;
-        this.sex = sex;
-        this.role = role;
-    }
-
-
 }

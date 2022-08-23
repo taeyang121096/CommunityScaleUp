@@ -13,5 +13,5 @@ public class UserResponse {
     @NotNull
     private String name;
     @NotNull
-    private Role role;
+    private String role;
 }

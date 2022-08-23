@@ -1,5 +1,6 @@
 package com.scaleup.authentication.api;
 
+import com.scaleup.authentication.dto.LoginRequest;
 import com.scaleup.authentication.dto.Register;
 import com.scaleup.authentication.dto.UserRequest;
 import com.scaleup.authentication.dto.UserResponse;
@@ -25,7 +26,7 @@ public class UserController {
     }
 
     @GetMapping("/users")
-    public Register registers(){
+    public Register registers() {
         System.out.println("서버 접근");
         Register register = Register.builder()
                 .id(1)
@@ -36,5 +37,9 @@ public class UserController {
         return register;
     }
 
-
+    @PostMapping("/user/login")
+    public ResponseEntity<UserResponse> login(@RequestBody @Valid LoginRequest request) {
+        UserResponse response = userService.login(request);
+        return ResponseEntity.ok(response);
+    }
 }
