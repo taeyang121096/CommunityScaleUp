@@ -105,7 +105,6 @@ function Bulletinboard02() {
             </div>
         </>
     );
-
 }
 export default Bulletinboard02;
 
