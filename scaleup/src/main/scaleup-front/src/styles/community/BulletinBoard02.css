@@ -81,6 +81,11 @@
     margin-bottom : 50px;
   }
   
+  .movie-item{
+    border: 1px solid #333;
+    margin: 10px;
+  }
+
   .form-wrapper{
     width: 60%;
     margin: 0 auto;

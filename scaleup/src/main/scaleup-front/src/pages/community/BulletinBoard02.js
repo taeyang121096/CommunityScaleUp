@@ -148,10 +148,10 @@ function Bulletinboard02() {
       <h1>Movie Review</h1>
       <div className='movie-container'>
       {viewContent.map(element =>
-        <div>
+        <div className='movie-item'>
         <h2>{element.title}</h2>
         <div>
-            {element.content}
+            {ReactHtmlParser(element.content)}
         </div>
       </div>
       )}

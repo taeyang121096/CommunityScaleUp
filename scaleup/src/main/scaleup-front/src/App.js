@@ -11,6 +11,8 @@ import ShopMain from './pages/shop/shopMain';
 import CommunityMenu from './pages/community/components/communityMenu';
 import Signup from './components/Signup';
 import Login from './components/Login';
+import Voc from './pages/community/Voc';
+import VocView from './pages/community/VocView';
 
 
 function App() {
@@ -28,7 +30,8 @@ function App() {
                 <Route path="/toy" element = {<Toy/>}/>
                 <Route path="/food" element = {<Food/>}/>
                 <Route path="/clothes" element = {<Clothes/>}/>
-          
+                <Route path="/voc" element = {<Voc/>}/>
+                <Route path='/voc/:vocId' element={<VocView />}  />
         </Routes>
       </Router>
     </>
