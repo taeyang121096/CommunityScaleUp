@@ -19,7 +19,9 @@ function CommunityNavbar() { //메인 네비 바
                     BAMDAL 
                 </Link>
                 <div className='currentPage-community'>
-                    COMMUNITY
+                <Link to='/communitymain' className='navbar-logo' >
+                COMMUNITY
+                </Link>
                 </div>
                 <ul className= 'nav-menu'>
                     <li className='nav-item'>
@@ -50,7 +52,7 @@ function CommunityNavbar() { //메인 네비 바
                 </ul>
             </div>
         </div>
-        <CommunityMenu/>
+        {/* <CommunityMenu/> */}
         {visible && <Login />}
         </>
     );

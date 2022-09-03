@@ -27,7 +27,7 @@ function Navbar() { //메인 네비 바
                             </Link>
                         </li>
                         <li className='nav-item'>
-                            <Link to='' className='nav-links'>
+                            <Link to='/mypage' className='nav-links'>
                                 <i className="fa fa-user" aria-hidden="true" />
                             </Link>
                         </li>

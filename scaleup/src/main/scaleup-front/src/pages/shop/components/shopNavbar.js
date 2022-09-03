@@ -18,7 +18,9 @@ function ShopNavbar() { //메인 네비 바
                     BAMDAL 
                 </Link>
                 <div className='currentPage-shop'>
-                    SHOP
+                <Link to='/shop' className='navbar-logo' >
+                SHOP
+                </Link>
                 </div>
                 <ul className= 'nav-menu'>
                     <li className='nav-item'>
