@@ -147,10 +147,14 @@ function Bulletinboard02() {
             <div className="ex">
       <h1>Movie Review</h1>
       <div className='movie-container'>
-        <h2>제목</h2>
+      {viewContent.map(element =>
         <div>
-          내용
+        <h2>{element.title}</h2>
+        <div>
+            {element.content}
         </div>
+      </div>
+      )}
       </div>
       <div className='form-wrapper'>
         <input className="title-input" type='text' placeholder='제목'  onChange={getValue}
@@ -165,6 +169,11 @@ function Bulletinboard02() {
           onChange={(event, editor) => {
             const data = editor.getData();
             console.log({ event, editor, data });
+            setMovieContent({
+              ...movieContent,
+              content: data
+            })
+            console.log(movieContent);
           }}
           onBlur={(event, editor) => {
             console.log('Blur.', editor);
@@ -174,7 +183,9 @@ function Bulletinboard02() {
           }}
         />
       </div>
-      <button className="submit-button"><AiFillEdit/>등록</button>
+      <button className="submit-button"  onClick={() => {
+        setViewContent(viewContent.concat({...movieContent}));
+      }}><AiFillEdit/>등록</button>
     </div>
     <br></br>
     <br></br>
