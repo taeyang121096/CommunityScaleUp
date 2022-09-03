@@ -7,6 +7,48 @@
 
 }
 
+.board2_title{
+    float: left;
+}
+
+.board2_group{
+    width: 100%;
+    background-color:darkgrey;
+    color: white;
+    font-weight:100;
+}
+
+.group_btn{
+  border: 0;
+  outline: 0;
+  color: white;
+  font-size: large;
+  background-color:darkgrey;
+  
+}
+
 .board_table{
+    width: 700px;
 
 }
+
+.table_menu{
+    height: 30px;
+
+}
+
+  .menu_item{
+    border-top: 1.5px solid black;
+    border-bottom: 1.5px solid black;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin: 3px;
+  }
+
+  .table_content{
+    height: 30px;
+    border: 1px solid black;
+  }
+
+
+
