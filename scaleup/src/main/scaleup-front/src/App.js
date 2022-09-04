@@ -28,8 +28,7 @@ function App() {
                 <Route path="/toy" element = {<Toy/>}/>
                 <Route path="/food" element = {<Food/>}/>
                 <Route path="/clothes" element = {<Clothes/>}/>
-                <Route path="/voc" element = {<Voc/>}/>
-                <Route path='/voc/:vocId' element={<VocView />}  />
+                
         </Routes>
       </Router>
     </>
