@@ -72,15 +72,6 @@
     text-align: center;
   }
   
-  .movie-container {
-    margin: 0 auto;
-    width: 80%;
-    border: 1px solid #333;
-    padding: 10px 0 30px 0;
-    border-radius: 5px;
-    margin-bottom : 50px;
-  }
-  
   .movie-item{
     border: 1px solid #333;
     margin: 10px;

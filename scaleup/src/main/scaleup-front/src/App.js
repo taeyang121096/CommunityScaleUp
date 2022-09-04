@@ -13,6 +13,7 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import Voc from './pages/community/Voc';
 import VocView from './pages/community/VocView';
+import VocQuestion from './pages/community/VocQuestion';
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
                 <Route path="/clothes" element = {<Clothes/>}/>
                 <Route path="/voc" element = {<Voc/>}/>
                 <Route path='/voc/:vocId' element={<VocView />}  />
+                <Route path='/voc/question' element={<VocQuestion />}  />
         </Routes>
       </Router>
     </>

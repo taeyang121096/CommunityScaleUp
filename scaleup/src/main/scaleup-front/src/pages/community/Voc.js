@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import {Link, useNavigate} from "react-router-dom";
+import CommunityNavbar from './components/communityNavbar';
 import CommonTable from './CommonTable';
 import CommonTableColumn from './CommonTableColumn';
 import CommonTableRow from './CommonTableRow';
+import VocHeader from './VocHeader';
 
 function GetData() {
   const [data, setData] = useState({});
@@ -17,7 +19,6 @@ function GetData() {
     <CommonTableRow key={voc.id}>
       <CommonTableColumn>{voc.id}</CommonTableColumn>
       <CommonTableColumn>
-        // 추가내용
         <Link to={`/voc/${voc.id}`}>
           {voc.title}
         </Link>
@@ -33,7 +34,10 @@ function GetData() {
 function Voc() {
   const item = GetData();
 
-  return (<>
+  return (
+  <>
+  <CommunityNavbar/>
+  <VocHeader></VocHeader>
     <CommonTable headersName={['글번호', '제목', '등록일', '작성자']}>
       {item}
     </CommonTable>
