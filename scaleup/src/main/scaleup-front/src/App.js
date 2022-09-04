@@ -28,7 +28,10 @@ function App() {
                 <Route path="/toy" element = {<Toy/>}/>
                 <Route path="/food" element = {<Food/>}/>
                 <Route path="/clothes" element = {<Clothes/>}/>
+<<<<<<< HEAD
                 
+=======
+>>>>>>> 7e27e1e9f3e4caf29a5b1d5b3e8a2d03a44b8f6e
         </Routes>
       </Router>
     </>

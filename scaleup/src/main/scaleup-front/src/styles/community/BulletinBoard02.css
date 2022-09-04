@@ -41,6 +41,7 @@ width: 1000px;
 }
 
 .table_menu{
+<<<<<<< HEAD
   height: 30px;
 
 }
@@ -112,3 +113,67 @@ width: 1000px;
 .ck.ck-editor__editable:not(.ck-editor__nested-editable) {
   min-height: 500px;
 }
+=======
+    height: 30px;
+
+}
+
+  .menu_item{
+    border-top: 1.5px solid black;
+    border-bottom: 1.5px solid black;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin: 3px;
+  }
+
+  .table_content{
+    height: 30px;
+    border: 1px solid black;
+  }
+
+  .write_btn{
+    float: right;
+    width: 10%;
+    height: 11%;
+    font-size:medium;
+    background-color: white;
+    border: 1.3px solid black;
+  }
+
+
+  .ex {
+    text-align: center;
+  }
+  
+  .movie-item{
+    border: 1px solid #333;
+    margin: 10px;
+  }
+
+  .form-wrapper{
+    width: 60%;
+    margin: 0 auto;
+  }
+  
+  .title-input {
+    width: 500px;
+    height: 40px;
+    margin: 10px;
+  }
+  
+  .submit-button {
+    width: 120px;
+    height: 40px;
+    font-size: 20px;
+    background-color: black;
+    color: white;
+    border: 1.3px solid black;
+    border-radius: 5px;
+    margin-top: 40px;
+    vertical-align: middle;
+  }
+  
+  .ck.ck-editor__editable:not(.ck-editor__nested-editable) {
+    min-height: 500px;
+  }
+>>>>>>> 7e27e1e9f3e4caf29a5b1d5b3e8a2d03a44b8f6e
