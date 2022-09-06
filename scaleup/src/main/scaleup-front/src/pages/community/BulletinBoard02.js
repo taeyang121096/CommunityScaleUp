@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { HashRouter, BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import styled, { ThemeConsumer } from 'styled-components';
 import CommunityNavbar from './components/communityNavbar';
 import '../../styles/community/BulletinBoard02.css'
@@ -18,7 +18,6 @@ function BulletinBoard02() {
   const [movieContent, setMovieContent] = useState({ //입력한 내용 state에 저장
     title: '',
     content: '',
-    time: '',
     category: ''
   })
   const [viewContent, setViewContent] = useState([]);
@@ -54,6 +53,23 @@ function BulletinBoard02() {
     },
     [currentClick]
   );
+
+  const onClickWrite = () => {
+    const url = "";
+    const sendParam = {
+        title: movieContent.title,
+        content: movieContent.content,
+        time: nowTime,
+        category: movieContent.category        
+    }
+    axios.post(url, sendParam)
+        .then((res) => {
+            console.log(res);            
+        })
+        .catch((error) => {
+            console.log(error.response);
+        })
+}
 
   return (
     <>
@@ -103,7 +119,7 @@ function BulletinBoard02() {
             </div>
             <br></br>
             <br></br>
-            <button className='write_btn'><AiFillEdit />글쓰기</button>
+            <button className='write_btn' onClick={onClickWrite}><AiFillEdit />글쓰기</button>
             <br></br>
             <br></br>
 

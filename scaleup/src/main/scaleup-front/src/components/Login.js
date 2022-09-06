@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react'
 import '../styles/components/Login.css'
 import {validateId, validatePw, validateWhitespace} from "../utils/validateLogin"
 import axios from 'axios';
-import {Link, useNavigate} from "react-router-dom";
 import Navbar from './Navbar';
 
 function Login() { //로그인
