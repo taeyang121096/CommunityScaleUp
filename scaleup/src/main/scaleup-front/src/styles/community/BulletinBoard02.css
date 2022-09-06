@@ -27,12 +27,20 @@ background-color:darkgrey;
 
 }
 
+.search{
+float: right;
+margin-bottom: 20px;
+}
+
+.search_text{
+margin-right: 2px;
+}
+
 .board_table{
 width: 1000px;
 }
 
 .table_menu{
-<<<<<<< HEAD
   height: 30px;
 
 }
@@ -50,6 +58,24 @@ width: 1000px;
   border: 1px solid black;
 }
 
+.write_btn{
+  float: right;
+  width: 10%;
+  height: 11%;
+  font-size:medium;
+  background-color: white;
+  border: 1.3px solid black;
+}
+
+
+.ex {
+  text-align: center;
+}
+
+.movie-item{
+  border: 1px solid #333;
+  margin: 10px;
+}
 
 .form-wrapper{
   width: 60%;

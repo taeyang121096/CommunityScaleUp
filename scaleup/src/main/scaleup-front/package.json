@@ -40,11 +40,8 @@
     "jest-resolve": "^27.4.2",
     "jest-watch-typeahead": "^1.0.0",
     "mini-css-extract-plugin": "^2.4.5",
-<<<<<<< HEAD
-=======
     "moment": "^2.29.4",
     "node-html-parser": "^5.4.2",
->>>>>>> 7e27e1e9f3e4caf29a5b1d5b3e8a2d03a44b8f6e
     "package.json": "^2.0.1",
     "postcss": "^8.4.4",
     "postcss-flexbugs-fixes": "^5.0.2",

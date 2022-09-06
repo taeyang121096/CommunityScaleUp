@@ -13,6 +13,7 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 
 
+
 function App() {
   return (
     <>
@@ -28,7 +29,7 @@ function App() {
                 <Route path="/toy" element = {<Toy/>}/>
                 <Route path="/food" element = {<Food/>}/>
                 <Route path="/clothes" element = {<Clothes/>}/>
-<<<<<<< HEAD
+                
                 
         </Routes>
       </Router>

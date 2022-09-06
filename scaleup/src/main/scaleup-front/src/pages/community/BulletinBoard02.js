@@ -109,10 +109,10 @@ function BulletinBoard02() {
 
             <div className='form-wrapper'>
               <select onChange={getValue} name='category'>
-                <option value="humor">유머</option>
-                <option value="news">소식</option>
-                <option value="impression">감동</option>
-                <option value="information">정보</option>
+                <option value="유머">유머</option>
+                <option value="소식">소식</option>
+                <option value="감동">감동</option>
+                <option value="정보">정보</option>
               </select>
               <input className="title-input" type='text' placeholder='제목' onChange={getValue}
                 name='title' />
