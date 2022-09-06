@@ -18,36 +18,11 @@ function BulletinBoard02() {
   const [movieContent, setMovieContent] = useState({ //입력한 내용 state에 저장
     title: '',
     content: '',
-    time: ''
+    time: '',
+    category: ''
   })
   const [viewContent, setViewContent] = useState([]);
   const nowTime = moment().format('YYYY-MM-DD HH:mm:ss'); //현재 시간
-
-  const OPTIONS = [
-    { value: "humor", name: "유머" },
-    { value: "impression", name: "감동" },
-    { value: "news", name: "소식" },
-    { value: "infromation", name: "정보" },
-  ];
-
-  const SelectBox = (props) => {
-    const handleChange = (e) => {
-      // event handler
-      console.log(e.target.value);
-    };
-    return (
-      <select onChange={handleChange}>
-        {props.options.map((option) => (
-          <option
-            key={option.value}
-            value={option.value}
-          >
-            {option.name}
-          </option>
-        ))}
-      </select>
-    );
-  };
 
   const getValue = e => {
     const { name, value } = e.target;
@@ -117,7 +92,7 @@ function BulletinBoard02() {
                 <tbody>
                   {viewContent.map(element =>
                     <tr className='table_content'>
-                      <td></td>
+                      <td>{element.category}</td>
                       <td>{element.title}</td>
                       <td>{ReactHtmlParser(element.content)}</td>
                       <td>{nowTime}</td>
@@ -133,7 +108,12 @@ function BulletinBoard02() {
             <br></br>
 
             <div className='form-wrapper'>
-            <SelectBox options={OPTIONS} className="selectbox"></SelectBox>
+              <select onChange={getValue} name='category'>
+                <option value="humor">유머</option>
+                <option value="news">소식</option>
+                <option value="impression">감동</option>
+                <option value="information">정보</option>
+              </select>
               <input className="title-input" type='text' placeholder='제목' onChange={getValue}
                 name='title' />
               <CKEditor
