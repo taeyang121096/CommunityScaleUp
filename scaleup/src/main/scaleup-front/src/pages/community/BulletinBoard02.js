@@ -9,12 +9,13 @@ import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import ReactHtmlParser from 'html-react-parser';
 import moment from 'moment';
+import Write from './Write';
 
 function BulletinBoard02() {
 
   const [currentClick, setCurrentClick] = React.useState(null);
   const [prevClick, setPrevClick] = React.useState(null);
-  const [movieContent, setMovieContent] = useState({ //입력한 내용 state에 저장
+  const [writeContent, setWriteContent] = useState({ //입력한 내용 state에 저장
     title: '',
     content: '',
     category: ''
@@ -24,11 +25,11 @@ function BulletinBoard02() {
 
   const getValue = e => {
     const { name, value } = e.target;
-    setMovieContent({
-      ...movieContent,
+    setWriteContent({
+      ...writeContent,
       [name]: value
     })
-    console.log(movieContent);
+    console.log(writeContent);
   };
 
   const GetClick = (e) => {
@@ -56,10 +57,10 @@ function BulletinBoard02() {
   const onClickWrite = () => {
     const url = "";
     const sendParam = {
-      title: movieContent.title,
-      content: movieContent.content,
+      title: writeContent.title,
+      content: writeContent.content,
       time: nowTime,
-      category: movieContent.category
+      category: writeContent.category
     }
     axios.post(url, sendParam)
       .then((res) => {
@@ -141,11 +142,11 @@ function BulletinBoard02() {
                 onChange={(event, editor) => {
                   const data = editor.getData();
                   console.log({ event, editor, data });
-                  setMovieContent({
-                    ...movieContent,
+                  setWriteContent({
+                    ...writeContent,
                     content: data
                   })
-                  console.log(movieContent);
+                  console.log(writeContent);
                 }}
                 onBlur={(event, editor) => {
                   console.log('Blur.', editor);
@@ -156,7 +157,7 @@ function BulletinBoard02() {
               />
             </div>
             <button className="submit-button" onClick={() => {
-              setViewContent(viewContent.concat({ ...movieContent }));
+              setViewContent(viewContent.concat({ ...writeContent }));
               onClickWrite();
             }}><AiFillEdit />등록</button>
           </div>
