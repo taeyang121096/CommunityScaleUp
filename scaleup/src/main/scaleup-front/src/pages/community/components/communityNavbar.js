@@ -4,7 +4,6 @@ import {HashRouter as Router, Routes, Route} from 'react-router-dom';
 import '../../../styles/community/components/communityNavbar.css'
 import Signup from "../../../components/Signup";
 import Login from "../../../components/Login";
-import CommunityMenu from './communityMenu';
 
 
 function CommunityNavbar() { //메인 네비 바

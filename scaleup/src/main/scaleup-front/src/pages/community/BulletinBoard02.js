@@ -10,7 +10,6 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import ReactHtmlParser from 'html-react-parser';
 import moment from 'moment';
 
-
 function BulletinBoard02() {
 
   const [currentClick, setCurrentClick] = React.useState(null);
@@ -57,19 +56,19 @@ function BulletinBoard02() {
   const onClickWrite = () => {
     const url = "";
     const sendParam = {
-        title: movieContent.title,
-        content: movieContent.content,
-        time: nowTime,
-        category: movieContent.category        
+      title: movieContent.title,
+      content: movieContent.content,
+      time: nowTime,
+      category: movieContent.category
     }
     axios.post(url, sendParam)
-        .then((res) => {
-            console.log(res);            
-        })
-        .catch((error) => {
-            console.log(error.response);
-        })
-}
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((error) => {
+        console.log(error.response);
+      })
+  }
 
   return (
     <>
@@ -119,7 +118,7 @@ function BulletinBoard02() {
             </div>
             <br></br>
             <br></br>
-            <button className='write_btn' onClick={onClickWrite}><AiFillEdit />글쓰기</button>
+            <Link to='/write'><button className='write_btn'><AiFillEdit />글쓰기</button></Link>
             <br></br>
             <br></br>
 
@@ -158,6 +157,7 @@ function BulletinBoard02() {
             </div>
             <button className="submit-button" onClick={() => {
               setViewContent(viewContent.concat({ ...movieContent }));
+              onClickWrite();
             }}><AiFillEdit />등록</button>
           </div>
         </div>

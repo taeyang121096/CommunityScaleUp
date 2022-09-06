@@ -8,11 +8,9 @@ import Toy from './pages/shop/Toy';
 import Acc from './pages/shop/Acc';
 import Clothes from './pages/shop/Clothes';
 import ShopMain from './pages/shop/shopMain';
-import CommunityMenu from './pages/community/components/communityMenu';
 import Signup from './components/Signup';
 import Login from './components/Login';
-
-
+import Write from './pages/community/Write';
 
 function App() {
   return (
@@ -24,13 +22,11 @@ function App() {
                 <Route path="/sign-in" element = {<Login/>}/>
                 <Route path="/shop" element = {<ShopMain/>}/>
                 <Route path="/communitymain" element = {<BulletinBoard02/>}/>
-                <Route path="/communitymenu" element = {<CommunityMenu/>}/>
                 <Route path="/acc" element = {<Acc/>}/>
                 <Route path="/toy" element = {<Toy/>}/>
                 <Route path="/food" element = {<Food/>}/>
                 <Route path="/clothes" element = {<Clothes/>}/>
-                
-                
+                <Route path="/write" element = {<Write/>}/>
         </Routes>
       </Router>
     </>
