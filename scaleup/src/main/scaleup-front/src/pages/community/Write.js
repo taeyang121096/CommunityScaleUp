@@ -8,6 +8,7 @@ import { AiFillEdit } from "react-icons/ai";
 import CommunityNavbar from './components/communityNavbar';
 import '../../styles/community/BulletinBoard02.css'
 import Bulletinboard02 from './BulletinBoard02';
+import { Link } from 'react-router-dom';
 
 function Write() {
 
@@ -90,7 +91,7 @@ function Write() {
             <button className="submit-button" onClick={() => {
               setViewContent(viewContent.concat({ ...writeContent }));
               onClickWrite();
-            }}><AiFillEdit />등록</button>
+            }}><AiFillEdit />등록</button> <Link to='/community'><button className="submit-button2">돌아가기</button></Link>
             </div>
             <br></br>
             <br></br>

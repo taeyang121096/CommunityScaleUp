@@ -122,7 +122,7 @@ function BulletinBoard02() {
             </div>
             <br></br>
             <br></br>
-            <Link to='/write'><button className='write_btn'><AiFillEdit />글쓰기</button></Link>
+            <Link to='/community/write'><button className='write_btn'><AiFillEdit />글쓰기</button></Link>
             <br></br>
             <br></br>
 

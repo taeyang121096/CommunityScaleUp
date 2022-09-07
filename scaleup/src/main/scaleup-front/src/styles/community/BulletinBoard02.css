@@ -116,6 +116,21 @@ width: 1000px;
   border: 1.3px solid black;
   border-radius: 5px;
   margin-top: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.submit-button2 {
+  width: 120px;
+  height: 40px;
+  font-size: 20px;
+  background-color: white;
+  border: 1.3px solid black;
+  border-radius: 5px;
+  margin-top: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
   vertical-align: middle;
 }
 
