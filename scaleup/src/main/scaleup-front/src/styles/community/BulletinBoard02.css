@@ -53,6 +53,25 @@ width: 1000px;
   margin: 3px;
 }
 
+.menu_item1{
+  border-top: 1.5px solid black;
+  border-bottom: 1.5px solid black;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin: 3px;
+  width: 10%;
+}
+
+.menu_item2{
+  border-top: 1.5px solid black;
+  border-bottom: 1.5px solid black;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin: 3px;
+  width: 15%;
+}
+
+
 .table_content{
   height: 30px;
   border: 1px solid black;

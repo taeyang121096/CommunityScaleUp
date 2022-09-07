@@ -17,7 +17,7 @@ function Menubar() { //메인 페이지 가운데 메뉴
                         </Link>
                     </li>     
                     <li className='menu-item'>
-                        <Link to='/communitymain' className='menu-links' >
+                        <Link to='/community' className='menu-links' >
                            COMMUNITY
                         </Link>
                     </li>

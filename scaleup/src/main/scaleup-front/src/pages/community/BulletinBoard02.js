@@ -21,7 +21,7 @@ function BulletinBoard02() {
     category: ''
   })
   const [viewContent, setViewContent] = useState([]);
-  const nowTime = moment().format('YYYY-MM-DD HH:mm:ss'); //현재 시간
+  const nowTime = moment().format('MM-DD HH:mm:ss'); //현재 시간
 
   const getValue = e => {
     const { name, value } = e.target;
@@ -99,19 +99,22 @@ function BulletinBoard02() {
               <table className='board_table'>
                 <thead className='table_menu'>
                   <tr>
-                    <th className='menu_item'>카테고리</th>
+                  <th className='menu_item1'>글번호</th>
+                    <th className='menu_item2'>카테고리</th>
                     <th className='menu_item'>제목</th>
-                    <th className='menu_item'>내용</th>
-                    <th className='menu_item'>날짜</th>
+                    <th className='menu_item2'>날짜</th>
+                    <th className='menu_item2'>조회수</th>
                   </tr>
                 </thead>
                 <tbody>
                   {viewContent.map(element =>
                     <tr className='table_content'>
+                      <td></td>
                       <td>{element.category}</td>
-                      <td>{element.title}</td>
-                      <td>{ReactHtmlParser(element.content)}</td>
+                      <Link to=''><td>{element.title}</td></Link>
+                      {/* <td>{ReactHtmlParser(element.content)}</td> */}
                       <td>{nowTime}</td>
+                      <td></td>
                     </tr>
                   )}
                 </tbody>

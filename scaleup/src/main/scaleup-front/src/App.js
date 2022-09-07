@@ -11,6 +11,7 @@ import ShopMain from './pages/shop/shopMain';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import Write from './pages/community/Write';
+// import PostMain from './pages/community/PostMain';
 
 function App() {
   return (
@@ -21,12 +22,14 @@ function App() {
                 <Route path="/sign-up" element = {<Signup/>}/>
                 <Route path="/sign-in" element = {<Login/>}/>
                 <Route path="/shop" element = {<ShopMain/>}/>
-                <Route path="/communitymain" element = {<BulletinBoard02/>}/>
+                <Route path="/community" element = {<BulletinBoard02/>}/>
+                <Route path="/community/:no" element = {<></>}/>
                 <Route path="/acc" element = {<Acc/>}/>
                 <Route path="/toy" element = {<Toy/>}/>
                 <Route path="/food" element = {<Food/>}/>
                 <Route path="/clothes" element = {<Clothes/>}/>
                 <Route path="/write" element = {<Write/>}/>
+                {/* <Route path="/postmain" element = {<PostMain/>}/> */}
         </Routes>
       </Router>
     </>
