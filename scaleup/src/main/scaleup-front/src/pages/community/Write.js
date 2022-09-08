@@ -2,15 +2,17 @@ import React, {useState, useEffect}from 'react'
 import axios from 'axios';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import ReactHtmlParser from 'html-react-parser';
 import moment from 'moment';
 import { AiFillEdit } from "react-icons/ai";
 import CommunityNavbar from './components/communityNavbar';
 import '../../styles/community/BulletinBoard02.css'
-import Bulletinboard02 from './BulletinBoard02';
 import { Link } from 'react-router-dom';
+import {validateEmpty} from '../../utils/validateWrite.js'
 
 function Write() {
+
+  const [title, setTitle] = useState("")
+  const [content, setContent] = useState("")
 
   const [writeContent, setWriteContent] = useState({ //입력한 내용 state에 저장
     title: '',
@@ -21,6 +23,7 @@ function Write() {
   const nowTime = moment().format('MM-DD HH:mm:ss'); //현재 시간
 
   const [viewContent, setViewContent] = useState([]);
+  const [disabled, setDisabled] = useState(false); //disabled는 비활성화. false이므로 활성화가 기본.
 
   const getValue = e => {
     const { name, value } = e.target;
@@ -31,7 +34,11 @@ function Write() {
     console.log(writeContent);
   };
 
-  const onClickWrite = () => {
+  useEffect(() => { //유효성 검사 모두 만족할 때,
+    setDisabled(!((validateEmpty(writeContent.title))&&(validateEmpty(writeContent.content))))
+}, [writeContent.title, writeContent.content])
+
+  const onClickWrite = () => { //내가 쓴 글 보내기
     const url = "";
     const sendParam = {
       title: writeContent.title,
@@ -63,10 +70,10 @@ function Write() {
                 <option value="정보">정보</option>
               </select>
               <input className="title-input" type='text' placeholder='제목' onChange={getValue}
-                name='title' />
+                name='title'/>
               <CKEditor
                 editor={ClassicEditor}
-                data="<p>Hello from CKEditor 5!</p>"
+                data=""
                 onReady={editor => {
                   // You can store the "editor" and use when it is needed.
                   console.log('Editor is ready to use!', editor);
@@ -78,6 +85,7 @@ function Write() {
                     ...writeContent,
                     content: data
                   })
+
                   console.log(writeContent);
                 }}
                 onBlur={(event, editor) => {
@@ -88,7 +96,7 @@ function Write() {
                 }}
               />
             </div>
-            <button className="submit-button" onClick={() => {
+            <button className="submit-button" disabled={disabled} onClick={() => {
               setViewContent(viewContent.concat({ ...writeContent }));
               onClickWrite();
             }}><AiFillEdit />등록</button> <Link to='/community'><button className="submit-button2">돌아가기</button></Link>

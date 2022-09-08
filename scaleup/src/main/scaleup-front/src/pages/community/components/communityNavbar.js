@@ -18,7 +18,9 @@ function CommunityNavbar() { //메인 네비 바
                     BAMDAL 
                 </Link>
                 <div className='currentPage-community'>
-                    COMMUNITY
+                <Link to='/community' className='nav-links2'>
+                            COUMMUNITY
+                        </Link>
                 </div>
                 <ul className= 'nav-menu'>
                     <li className='nav-item'>
