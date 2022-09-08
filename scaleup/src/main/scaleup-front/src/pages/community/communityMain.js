@@ -1,6 +1,4 @@
 import React from 'react'
-import {HashRouter, BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import CommunityMenu from './components/communityMenu';
 import CommunityNavbar from './components/communityNavbar';
 
 

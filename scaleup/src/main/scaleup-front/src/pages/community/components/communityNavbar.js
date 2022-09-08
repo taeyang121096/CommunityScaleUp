@@ -4,7 +4,6 @@ import {HashRouter as Router, Routes, Route} from 'react-router-dom';
 import '../../../styles/community/components/communityNavbar.css'
 import Signup from "../../../components/Signup";
 import Login from "../../../components/Login";
-import CommunityMenu from './communityMenu';
 
 
 function CommunityNavbar() { //메인 네비 바
@@ -50,7 +49,10 @@ function CommunityNavbar() { //메인 네비 바
                 </ul>
             </div>
         </div>
+<<<<<<< HEAD
         
+=======
+>>>>>>> 9425170d412229172c4996d3624517e083a10938
         {visible && <Login />}
         </>
     );

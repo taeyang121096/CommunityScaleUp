@@ -6,10 +6,13 @@ import CommunityNavbar from './components/communityNavbar';
 import '../../styles/community/BulletinBoard02.css'
 import Bulletinboard02 from './BulletinBoard02';
 
-function write() {
+function Write() {
     return(
+        <>
+        <CommunityNavbar/>
+        </>
 
     )
 }
 
-export default write;
+export default Write;
