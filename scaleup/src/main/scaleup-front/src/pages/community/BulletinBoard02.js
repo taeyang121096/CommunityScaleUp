@@ -39,6 +39,7 @@ function BulletinBoard02() {
 
   const getTime = () => {
     //등록 버튼 누를 시, 년, 월, 일 별로 시간 가져와서 저장 후, 출력...?
+    // 미완성
     getYear(date1);
     getMonth(date1);
     getDate(date1);
@@ -61,7 +62,7 @@ function BulletinBoard02() {
     setCurrentClick(e.target.id);
     console.log(e.target.id);
   };
- 
+
   React.useEffect( //메뉴 색 클릭 시, 바꾸기
     (e) => {
       if (currentClick !== null) {
@@ -151,7 +152,7 @@ function BulletinBoard02() {
                       <td>{element.category}</td>
                       <Link to=''><td>{element.title}</td></Link>
                       {/* <td>{ReactHtmlParser(element.content)}</td> */}
-                      <td>{foramtDate("2022-09-10 20:50:13")}</td>
+                      <td></td>
                       <td></td>
                     </tr>
                   )}
