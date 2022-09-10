@@ -71,6 +71,16 @@
     padding: 0.5rem 1rem;
     height: 100%;
   }
+
+  .nav-links2 {
+    color: rgb(0, 0, 0);
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    height: 100%;
+  }
   
   .nav-links:hover {
     border-bottom: 4px solid rgba(32, 31, 31, 0.336);

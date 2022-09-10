@@ -21,9 +21,10 @@ function BulletinBoard02() {
     category: ''
   })
   const [viewContent, setViewContent] = useState([]);
-  const nowTime = moment().format('YYYY-MM-DD HH:mm:ss'); //현재 시간
+  const nowTime = moment().format('MM-DD HH:mm:ss'); //현재 시간
+  const [data, setData] = useState([]);
 
-  const getValue = e => {
+  const getValue = e => { //name있는 값 가져와서 writeContent에 저장
     const { name, value } = e.target;
     setWriteContent({
       ...writeContent,
@@ -32,7 +33,7 @@ function BulletinBoard02() {
     console.log(writeContent);
   };
 
-  const GetClick = (e) => {
+  const GetClick = (e) => { //메뉴 색 클릭 시, 바꾸기
     setCurrentClick(e.target.id);
     console.log(e.target.id);
   };
@@ -71,6 +72,19 @@ function BulletinBoard02() {
       })
   }
 
+  //글 목록 받아오기
+  useEffect(() => {
+    axios.get('')
+      .then(res => {
+        setData(res.data); //setData에 저장
+        console.log(res);
+      })
+      .catch((error) => {
+        console.log(error.res);
+      })
+  }, []);
+
+
   return (
     <>
       <CommunityNavbar />
@@ -99,19 +113,22 @@ function BulletinBoard02() {
               <table className='board_table'>
                 <thead className='table_menu'>
                   <tr>
-                    <th className='menu_item'>카테고리</th>
+                    <th className='menu_item1'>글번호</th>
+                    <th className='menu_item2'>카테고리</th>
                     <th className='menu_item'>제목</th>
-                    <th className='menu_item'>내용</th>
-                    <th className='menu_item'>날짜</th>
+                    <th className='menu_item2'>날짜</th>
+                    <th className='menu_item2'>조회수</th>
                   </tr>
                 </thead>
                 <tbody>
                   {viewContent.map(element =>
                     <tr className='table_content'>
+                      <td></td>
                       <td>{element.category}</td>
-                      <td>{element.title}</td>
-                      <td>{ReactHtmlParser(element.content)}</td>
+                      <Link to=''><td>{element.title}</td></Link>
+                      {/* <td>{ReactHtmlParser(element.content)}</td> */}
                       <td>{nowTime}</td>
+                      <td></td>
                     </tr>
                   )}
                 </tbody>
@@ -119,7 +136,7 @@ function BulletinBoard02() {
             </div>
             <br></br>
             <br></br>
-            <Link to='/write'><button className='write_btn'><AiFillEdit />글쓰기</button></Link>
+            <Link to='/community/write'><button className='write_btn'><AiFillEdit />글쓰기</button></Link>
             <br></br>
             <br></br>
 
