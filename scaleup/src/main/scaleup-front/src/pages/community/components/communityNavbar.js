@@ -51,6 +51,7 @@ function CommunityNavbar() { //메인 네비 바
                 </ul>
             </div>
         </div>
+        
         {visible && <Login />}
         </>
     );
