@@ -49,10 +49,7 @@ function CommunityNavbar() { //메인 네비 바
                 </ul>
             </div>
         </div>
-<<<<<<< HEAD
         
-=======
->>>>>>> 9425170d412229172c4996d3624517e083a10938
         {visible && <Login />}
         </>
     );
