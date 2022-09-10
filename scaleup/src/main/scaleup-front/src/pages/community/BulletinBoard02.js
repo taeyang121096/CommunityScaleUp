@@ -10,6 +10,17 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import ReactHtmlParser from 'html-react-parser';
 import moment from 'moment';
 import Write from './Write';
+import TimeCounting from 'time-counting'
+import {
+  getYear,
+  getMonth,
+  getDate,
+  getHours,
+  getMinutes,
+  getSeconds,
+  format
+} from "date-fns";
+import foramtDate from '../../utils/foramtDate';
 
 function BulletinBoard02() {
 
@@ -21,8 +32,21 @@ function BulletinBoard02() {
     category: ''
   })
   const [viewContent, setViewContent] = useState([]);
-  const nowTime = moment().format('MM-DD HH:mm:ss'); //현재 시간
+  const nowTime = moment().format('YY-MM-DD HH:mm:ss'); //현재 시간
+  const date1 = new Date();
+  format(date1, "yyyy-MM-dd HH:mm:ss");
   const [data, setData] = useState([]);
+
+  const getTime = () => {
+    //등록 버튼 누를 시, 년, 월, 일 별로 시간 가져와서 저장 후, 출력...?
+    getYear(date1);
+    getMonth(date1);
+    getDate(date1);
+    getHours(date1);
+    getMinutes(date1);
+    getSeconds(date1);
+    console.log()
+  }
 
   const getValue = e => { //name있는 값 가져와서 writeContent에 저장
     const { name, value } = e.target;
@@ -37,7 +61,7 @@ function BulletinBoard02() {
     setCurrentClick(e.target.id);
     console.log(e.target.id);
   };
-
+ 
   React.useEffect( //메뉴 색 클릭 시, 바꾸기
     (e) => {
       if (currentClick !== null) {
@@ -127,7 +151,7 @@ function BulletinBoard02() {
                       <td>{element.category}</td>
                       <Link to=''><td>{element.title}</td></Link>
                       {/* <td>{ReactHtmlParser(element.content)}</td> */}
-                      <td>{nowTime}</td>
+                      <td>{foramtDate("2022-09-10 20:50:13")}</td>
                       <td></td>
                     </tr>
                   )}
