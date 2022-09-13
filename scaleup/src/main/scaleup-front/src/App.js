@@ -11,6 +11,7 @@ import ShopMain from './pages/shop/shopMain';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import Write from './pages/community/Write';
+import VocView from './pages/community/VocView';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
                 <Route path="/food" element = {<Food/>}/>
                 <Route path="/clothes" element = {<Clothes/>}/>
                 <Route path="/community/write" element = {<Write/>}/>
+                <Route path="/vocview" element={<VocView/>}/>
                 {/* <Route path="/postmain" element = {<PostMain/>}/> */}
         </Routes>
       </Router>
