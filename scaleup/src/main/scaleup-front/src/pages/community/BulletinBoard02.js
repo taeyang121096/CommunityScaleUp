@@ -10,7 +10,6 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import ReactHtmlParser from 'html-react-parser';
 import moment from 'moment';
 import Write from './Write';
-import TimeCounting from 'time-counting'
 import {
   getYear,
   getMonth,
