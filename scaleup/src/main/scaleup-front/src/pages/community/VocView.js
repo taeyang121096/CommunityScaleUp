@@ -2,9 +2,11 @@ import React from 'react'
 import {HashRouter, BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import CommunityNavbar from './components/communityNavbar';
 import { Link } from 'react-router-dom';
+import { useHistory } from "react-router";
 import '../../styles/community/VocView.css'
 
-function VocView(){ //글쓰기 상세페이지 왜 안올라가지??
+function VocView({location, history}){ 
+    
 
     return(
     <>
@@ -27,8 +29,9 @@ function VocView(){ //글쓰기 상세페이지 왜 안올라가지??
                 <label for="voc-detail">내용</label>
                 <div> 내용 들어감 어쩌구 저쩌구</div>
             </div>
-            <h4 align="right"><Link to ="/community"> 목록으로 돌아가기</Link></h4>
-
+            {/*<h4 align="right"><Link to ="/community">목록으로 돌아가기</Link></h4>*/}
+            <button onClick={() => history.push('/community')}>목록으로</button>
+        
             
         </div></>
 
