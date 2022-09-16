@@ -44,7 +44,7 @@ function VocView({location, history}){
             </div>
             {/*<h4 align="right"><Link to ="/community">목록으로 돌아가기</Link></h4>*/}
             <br></br>
-            <button onClick={() => history.push('/community')}>목록으로</button>
+            <Link to='/community'><button className="to-bulletinboard02-button2">목록으로</button></Link>
         
             
         </div></>
