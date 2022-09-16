@@ -11,10 +11,11 @@ function VocView({location, history}){
     return(
     <>
         <CommunityNavbar/>
+        <br></br>
         <h2 align="center">게시글 상세정보</h2>
         <div className="voc-view-wrapper">
             <div className="voc-view-row">
-                <label for="voc-number">게시글 번호</label>
+                <label for="voc-number">카테고리</label>
                 
             </div>
             <div className="voc-view-row">
@@ -26,10 +27,23 @@ function VocView({location, history}){
                 
             </div>
             <div className="voc-view-row">
+                <label for="voc-date"> 조회수</label>
+                
+            </div>
+            <div className="voc-view-row">
+                <label for="voc-date"> 작성시간</label>
+                
+            </div>
+            <div className="voc-view-row">
+                <label for="voc-date"> 작성자</label>
+                
+            </div>
+            <div className="voc-view-row">
                 <label for="voc-detail">내용</label>
                 <div> 내용 들어감 어쩌구 저쩌구</div>
             </div>
             {/*<h4 align="right"><Link to ="/community">목록으로 돌아가기</Link></h4>*/}
+            <br></br>
             <button onClick={() => history.push('/community')}>목록으로</button>
         
             
