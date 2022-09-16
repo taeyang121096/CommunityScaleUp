@@ -26,7 +26,6 @@ function VocView(){ //글쓰기 상세페이지 왜 안올라가지??
                 <label>내용</label>
                 <div>
                 {
-                어쩌구저쩌구
 
                 }
                 </div>

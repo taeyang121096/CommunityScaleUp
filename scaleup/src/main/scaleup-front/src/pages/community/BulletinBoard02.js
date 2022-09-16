@@ -14,9 +14,11 @@ import {
   getYear,
   getMonth,
   getDate,
+  getDay,
   getHours,
   getMinutes,
   getSeconds,
+  getMilliseconds,
   format
 } from "date-fns";
 import foramtDate from '../../utils/foramtDate';
@@ -28,25 +30,20 @@ function BulletinBoard02() {
   const [writeContent, setWriteContent] = useState({ //입력한 내용 state에 저장
     title: '',
     content: '',
-    category: ''
+    category: '',
+    time:''
   })
   const [viewContent, setViewContent] = useState([]);
   const nowTime = moment().format('YY-MM-DD HH:mm:ss'); //현재 시간
-  const date1 = new Date();
-  format(date1, "yyyy-MM-dd HH:mm:ss");
-  const [data, setData] = useState([]);
+  // const date1 = String(new Date());
+  // const [registtime, setRegistTime] = useState(date1);
+  const time = new Date().getHours();
+  const minute = new Date().getMinutes();
+  const seconds = new Date().getSeconds();
+  const date1 = String(time) + ":" + String(minute) + ":" + String(seconds);
+  const [registtime, setRegistTime] = useState([date1]);
 
-  const getTime = () => {
-    //등록 버튼 누를 시, 년, 월, 일 별로 시간 가져와서 저장 후, 출력...?
-    // 미완성
-    getYear(date1);
-    getMonth(date1);
-    getDate(date1);
-    getHours(date1);
-    getMinutes(date1);
-    getSeconds(date1);
-    console.log()
-  }
+  //등록하기 버튼 누를 때 시간 state 저장..?
 
   const getValue = e => { //name있는 값 가져와서 writeContent에 저장
     const { name, value } = e.target;
@@ -100,7 +97,7 @@ function BulletinBoard02() {
   useEffect(() => {
     axios.get('')
       .then(res => {
-        setData(res.data); //setData에 저장
+        // setViewContent(res.data); //setViewContent에 저장
         console.log(res);
       })
       .catch((error) => {
@@ -151,7 +148,7 @@ function BulletinBoard02() {
                       <td>{element.category}</td>
                       <Link to=''><td>{element.title}</td></Link>
                       {/* <td>{ReactHtmlParser(element.content)}</td> */}
-                      <td></td>
+                      <td>{registtime}</td>
                       <td></td>
                     </tr>
                   )}
@@ -200,6 +197,9 @@ function BulletinBoard02() {
             <button className="submit-button" onClick={() => {
               setViewContent(viewContent.concat({ ...writeContent }));
               onClickWrite();
+              let copy = [...registtime];
+              copy.unshift(date1);
+              setRegistTime(copy);
             }}><AiFillEdit />등록</button>
           </div>
         </div>

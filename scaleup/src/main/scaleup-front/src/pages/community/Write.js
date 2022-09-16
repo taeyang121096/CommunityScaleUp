@@ -49,6 +49,7 @@ function Write() {
     axios.post(url, sendParam)
       .then((res) => {
         console.log(res);
+        alert('등록 완료');
       })
       .catch((error) => {
         console.log(error.response);
