@@ -148,7 +148,7 @@ function BulletinBoard02() {
                       <td>{element.category}</td>
                       <Link to=''><td>{element.title}</td></Link>
                       {/* <td>{ReactHtmlParser(element.content)}</td> */}
-                      <td>{registtime}</td>
+                      <td>{registtime[1]}</td>
                       <td></td>
                     </tr>
                   )}
