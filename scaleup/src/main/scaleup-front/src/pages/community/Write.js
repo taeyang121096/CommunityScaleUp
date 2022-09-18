@@ -39,11 +39,11 @@ function Write() {
 }, [writeContent.title, writeContent.content])
 
   const onClickWrite = () => { //내가 쓴 글 보내기
-    const url = "";
+    const url = "/api/board/{userNo}";
     const sendParam = {
       title: writeContent.title,
       content: writeContent.content,
-      time: nowTime,
+      time: registtime[registtime.length-1],
       category: writeContent.category
     }
     axios.post(url, sendParam)
