@@ -4,7 +4,11 @@ import lombok.Getter;
 
 @Getter
 public enum BoardCategory {
-    Total("전체"), Humor("유머");
+    인기("Popular"),
+    유머("Humor"),
+    소식("News"),
+    정보("Information"),
+    감동("Impression");
     private String value;
 
     private BoardCategory(String value) {

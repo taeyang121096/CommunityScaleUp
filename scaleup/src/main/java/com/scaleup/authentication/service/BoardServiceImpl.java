@@ -11,10 +11,12 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.persistence.EntityNotFoundException;
 import javax.transaction.Transactional;
 import java.time.LocalDateTime;
+
 import java.util.*;
 
 @RequiredArgsConstructor
@@ -22,6 +24,70 @@ import java.util.*;
 public class BoardServiceImpl implements BoardService {
     private final BoardRepository boardRepository;
     private final UserRepository userRepository;
+
+    @Transactional
+    @Override
+    public BoardResponse getPost(Long boardNo) {
+        Board board = boardRepository.findById(boardNo).orElseThrow(EntityNotFoundException::new);
+        board.updateViews(board.getViews() + 1);
+
+        return BoardResponse.builder()
+                .writer(board.getWriter())
+                .title(board.getTitle())
+                .content(board.getContent())
+                .views(board.getViews())
+                .category(board.getCategory())
+                .createDate(board.getCreateDate()).build();
+    }
+
+    @Override
+    public List<BoardResponse> getAllPost() {
+        List<Board> list = boardRepository.findAll();
+        List<BoardResponse> boards = new ArrayList<>();
+        for (Board board : list) {
+            boards.add(BoardResponse.builder()
+                    .writer(board.getWriter())
+                    .title(board.getTitle())
+                    .content(board.getContent())
+                    .views(board.getViews())
+                    .category(board.getCategory())
+                    .createDate(board.getCreateDate()).build());
+        }
+        return boards;
+    }
+
+    @Override
+    public List<BoardResponse> findPostByTitle(String title) {
+        List<Board> boardByTitle = boardRepository.findBoardByTitle(title);
+        List<BoardResponse> boardResponses = new ArrayList<>();
+        for (Board board : boardByTitle) {
+            boardResponses.add(BoardResponse.builder()
+                    .writer(board.getWriter())
+                    .title(board.getTitle())
+                    .content(board.getContent())
+                    .views(board.getViews())
+                    .category(board.getCategory())
+                    .createDate(board.getCreateDate()).build());
+        }
+
+        return boardResponses;
+    }
+
+    @Override
+    public List<BoardResponse> findPostByWriter(String writer) {
+        List<Board> boardByWriter = boardRepository.findBoardByWriter(writer);
+        List<BoardResponse> boardResponses = new ArrayList<>();
+        for (Board board : boardByWriter) {
+            boardResponses.add(BoardResponse.builder()
+                    .writer(board.getWriter())
+                    .title(board.getTitle())
+                    .content(board.getContent())
+                    .views(board.getViews())
+                    .category(board.getCategory())
+                    .createDate(board.getCreateDate()).build());
+        }
+        return boardResponses;
+    }
 
     @Override
     public BoardResponse post(Long userNo, BoardRequest boardRequest) {
@@ -33,17 +99,20 @@ public class BoardServiceImpl implements BoardService {
                 .content(boardRequest.getContent())
                 .createDate(LocalDateTime.now())
                 .views(0)
+                .category(boardRequest.getCategory())
                 .build());
 
         return BoardResponse.builder()
                 .writer(board.getWriter())
                 .title(board.getTitle())
                 .content(board.getContent())
+                .views(board.getViews())
+                .category(board.getCategory())
                 .createDate(board.getCreateDate()).build();
     }
 
     @Override
-    public BoardResponse getPost(Long boardNo) {
+    public BoardResponse getPostForEdit(Long boardNo) {
         Board board = boardRepository.findById(boardNo).orElseThrow(EntityNotFoundException::new);
 
         return BoardResponse.builder()
@@ -52,6 +121,7 @@ public class BoardServiceImpl implements BoardService {
                 .content(board.getContent())
                 .createDate(board.getCreateDate())
                 .views(board.getViews())
+                .category(board.getCategory())
                 .build();
     }
 
@@ -60,19 +130,22 @@ public class BoardServiceImpl implements BoardService {
     public BoardResponse updatePost(Long boardNo, BoardRequest boardRequest) {
         Board board = boardRepository.findById(boardNo).orElseThrow(EntityNotFoundException::new);
 
-        board.updateBoard(boardRequest.getTitle(), boardRequest.getContent(), LocalDateTime.now());
+        board.updateBoard(boardRequest.getTitle(), boardRequest.getContent(), boardRequest.getCategory(),
+                LocalDateTime.now());
 
         return BoardResponse.builder()
                 .writer(board.getWriter())
                 .title(board.getTitle())
                 .content(board.getContent())
+                .views(board.getViews())
+                .category(board.getCategory())
                 .updateDate(board.getCreateDate()).build();
     }
 
     @Transactional
     @Override
     public boolean deletePost(Long boardNo) {
-        if(boardRepository.existsById(boardNo)){
+        if (boardRepository.existsById(boardNo)) {
             boardRepository.deleteById(boardNo);
             return true;
         } else

@@ -12,4 +12,5 @@ import lombok.NoArgsConstructor;
 public class BoardRequest {
     private String title;
     private String content;
+    private String category;
 }

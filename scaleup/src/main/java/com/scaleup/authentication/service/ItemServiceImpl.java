@@ -12,7 +12,6 @@ import com.scaleup.core.authorize.FileType;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.dao.DuplicateKeyException;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -24,7 +23,6 @@ import java.time.LocalDateTime;
 import java.util.*;
 
 @RequiredArgsConstructor
-@Component
 @Service
 public class ItemServiceImpl implements ItemService {
     private final ItemRepository itemRepository;
@@ -132,7 +130,6 @@ public class ItemServiceImpl implements ItemService {
                 .quantity(findItemDetail.getQuantity())
                 .filesList(findItemFiles)
                 .build();
-
     }
 
     @Transactional

@@ -10,36 +10,42 @@ import java.time.LocalDateTime;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-@Table(name = "boards")
+@Table(name = "board")
 public class Board {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "boards_no")
+    @Column(name = "board_no")
     private Long no;
 
-    @Column(name = "boards_userNo")
+    @Column(name = "board_userNo")
     private Long userNo;
-    @Column(name = "boards_writer")
+    @Column(name = "board_writer")
     private String writer;
-    @Column(name = "boards_title")
+    @Column(name = "board_title")
     private String title;
-    @Column(name = "boards_content")
+    @Column(name = "board_content")
     private String content;
-    @Column(name = "boards_views")
+    @Column(name = "board_views")
     private Integer views;
-    @Column(name = "boards_category")
+    @Column(name = "board_category")
     private String category;
 
-    @Column(name = "boards_create_date")
+    @Column(name = "board_create_date")
     private LocalDateTime createDate;
-    @Column(name = "boards_update_date")
+    @Column(name = "board_update_date")
     private LocalDateTime updateDate;
 
 
     //==비즈니스 로직==//
-    public void updateBoard(String title, String content, LocalDateTime updateDate) {
+    public void updateBoard(String title, String content, String category, LocalDateTime updateDate) {
         this.title = title;
+        this.category = category;
         this.content = content;
         this.updateDate = updateDate;
+    }
+
+    //==비즈니스 로직==/
+    public void updateViews(Integer views) {
+        this.views = views;
     }
 }
