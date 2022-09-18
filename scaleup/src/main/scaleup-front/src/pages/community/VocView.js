@@ -1,11 +1,24 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {HashRouter, BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import CommunityNavbar from './components/communityNavbar';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useHistory } from "react-router";
 import '../../styles/community/VocView.css'
 
 function VocView({location, history}){ 
+    const [postData, setPostData] = useState([]);
+
+    useEffect(() => { //게시물 불러오기
+        axios.get('/api/board/{boardNo}')
+          .then(res => {
+            setPostData(res.data); //setPostData에 저장
+            console.log(res);
+          })
+          .catch((error) => {
+            console.log(error.res);
+          })
+      }, [setPostData]);
     
 
     return(
