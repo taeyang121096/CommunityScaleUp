@@ -11,8 +11,13 @@ import {validateEmpty} from '../../utils/validateWrite.js'
 
 function Write() {
 
-  const [title, setTitle] = useState("")
-  const [content, setContent] = useState("")
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  let time = new Date().getHours();
+  let minute = new Date().getMinutes();
+  let seconds = new Date().getSeconds();
+  let date1 = String(time) + ":" + String(minute) + ":" + String(seconds);
+  let [registtime, setRegistTime] = useState([]);
 
   const [writeContent, setWriteContent] = useState({ //입력한 내용 state에 저장
     title: '',
@@ -99,6 +104,9 @@ function Write() {
             </div>
             <button className="submit-button" disabled={disabled} onClick={() => {
               setViewContent(viewContent.concat({ ...writeContent }));
+              let copy = [...registtime];
+              copy.push(date1); //뒤에 새로운 배열값 추가
+              setRegistTime(copy);
               onClickWrite();
             }}><AiFillEdit />등록</button> <Link to='/community'><button className="submit-button2">돌아가기</button></Link>
             </div>

@@ -37,13 +37,18 @@ function BulletinBoard02() {
   const nowTime = moment().format('YY-MM-DD HH:mm:ss'); //현재 시간
   // const date1 = String(new Date());
   // const [registtime, setRegistTime] = useState(date1);
-  const time = new Date().getHours();
-  const minute = new Date().getMinutes();
-  const seconds = new Date().getSeconds();
-  const date1 = String(time) + ":" + String(minute) + ":" + String(seconds);
-  const [registtime, setRegistTime] = useState([date1]);
+  let time = new Date().getHours();
+  let minute = new Date().getMinutes();
+  let seconds = new Date().getSeconds();
+  let date1 = String(time) + ":" + String(minute) + ":" + String(seconds);
+  let [registtime, setRegistTime] = useState([]);
 
   //등록하기 버튼 누를 때 시간 state 저장..?
+
+  // useEffect(() => {
+  //   setRegistTime
+
+  // },[])
 
   const getValue = e => { //name있는 값 가져와서 writeContent에 저장
     const { name, value } = e.target;
@@ -77,11 +82,11 @@ function BulletinBoard02() {
   );
 
   const onClickWrite = () => {
-    const url = "";
+    const url = "/api/board/{userNo}";
     const sendParam = {
       title: writeContent.title,
       content: writeContent.content,
-      time: nowTime,
+      time: registtime[registtime.length-1],
       category: writeContent.category
     }
     axios.post(url, sendParam)
@@ -103,7 +108,7 @@ function BulletinBoard02() {
       .catch((error) => {
         console.log(error.res);
       })
-  }, []);
+  }, [setViewContent]);
 
 
   return (
@@ -142,13 +147,13 @@ function BulletinBoard02() {
                   </tr>
                 </thead>
                 <tbody>
-                  {viewContent.map(element =>
+                  {viewContent.map(element => //앞에 값이 계속 바뀌니까 계속 바뀜...
                     <tr className='table_content'>
                       <td></td>
                       <td>{element.category}</td>
                       <Link to=''><td>{element.title}</td></Link>
                       {/* <td>{ReactHtmlParser(element.content)}</td> */}
-                      <td>{registtime[1]}</td>
+                      <td>{registtime[registtime.length-1]}</td> 
                       <td></td>
                     </tr>
                   )}
@@ -196,10 +201,10 @@ function BulletinBoard02() {
             </div>
             <button className="submit-button" onClick={() => {
               setViewContent(viewContent.concat({ ...writeContent }));
-              onClickWrite();
               let copy = [...registtime];
-              copy.unshift(date1);
+              copy.push(date1); //뒤에 새로운 배열값 추가
               setRegistTime(copy);
+              onClickWrite();          
             }}><AiFillEdit />등록</button>
           </div>
         </div>
