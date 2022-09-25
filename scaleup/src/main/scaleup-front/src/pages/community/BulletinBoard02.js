@@ -42,6 +42,7 @@ function BulletinBoard02() {
   let seconds = new Date().getSeconds();
   let date1 = String(time) + ":" + String(minute) + ":" + String(seconds);
   let [registtime, setRegistTime] = useState([]);
+  const [hits, setHits] = useState(0);
 
   //등록하기 버튼 누를 때 시간 state 저장..?
 
@@ -81,13 +82,18 @@ function BulletinBoard02() {
     [currentClick]
   );
 
+  const HandleHist = () => {
+
+  }
+
   const onClickWrite = () => {
-    const url = "/api/board/{userNo}";
+    const url = '/api/board/${userNo}';
     const sendParam = {
       title: writeContent.title,
       content: writeContent.content,
       time: registtime[registtime.length-1],
-      category: writeContent.category
+      category: writeContent.category,
+      hits: hits
     }
     axios.post(url, sendParam)
       .then((res) => {
@@ -100,7 +106,7 @@ function BulletinBoard02() {
 
   //글 목록 받아오기
   useEffect(() => {
-    axios.get('')
+    axios.get('/api/board/list')
       .then(res => {
         // setViewContent(res.data); //setViewContent에 저장
         console.log(res);
@@ -151,10 +157,10 @@ function BulletinBoard02() {
                     <tr className='table_content'>
                       <td></td>
                       <td>{element.category}</td>
-                      <Link to=''><td>{element.title}</td></Link>
+                      <Link to='/vocview'><td>{element.title}</td></Link>
                       {/* <td>{ReactHtmlParser(element.content)}</td> */}
                       <td>{registtime[registtime.length-1]}</td> 
-                      <td></td>
+                      <td>{hits}</td>
                     </tr>
                   )}
                 </tbody>
@@ -202,7 +208,7 @@ function BulletinBoard02() {
             <button className="submit-button" onClick={() => {
               setViewContent(viewContent.concat({ ...writeContent }));
               let copy = [...registtime];
-              copy.push(date1); //뒤에 새로운 배열값 추가
+              copy.push(date1); //앞에 새로운 배열값 추가
               setRegistTime(copy);
               onClickWrite();          
             }}><AiFillEdit />등록</button>
