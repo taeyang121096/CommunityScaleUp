@@ -25,8 +25,6 @@ function Write() {
     category: ''
   })
 
-  const nowTime = moment().format('MM-DD HH:mm:ss'); //현재 시간
-
   const [viewContent, setViewContent] = useState([]);
   const [disabled, setDisabled] = useState(false); //disabled는 비활성화. false이므로 활성화가 기본.
 
@@ -44,11 +42,11 @@ function Write() {
 }, [writeContent.title, writeContent.content])
 
   const onClickWrite = () => { //내가 쓴 글 보내기
-    const url = "/api/board/{userNo}";
+    const url = "/api/board/test";
     const sendParam = {
       title: writeContent.title,
       content: writeContent.content,
-      time: registtime[registtime.length-1],
+      // time: registtime[registtime.length-1],
       category: writeContent.category
     }
     axios.post(url, sendParam)

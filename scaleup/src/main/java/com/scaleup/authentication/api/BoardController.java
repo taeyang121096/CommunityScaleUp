@@ -2,8 +2,14 @@ package com.scaleup.authentication.api;
 
 import com.scaleup.authentication.dto.BoardRequest;
 import com.scaleup.authentication.dto.BoardResponse;
+import com.scaleup.authentication.entity.Board;
 import com.scaleup.authentication.service.BoardService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -27,7 +33,7 @@ public class BoardController {
      * 전체 게시글 검색 / 일단 페이징은 안하고
      */
     @GetMapping("/board")
-    public ResponseEntity<?> getAllPost(){
+    public ResponseEntity<?> getAllPost() {
         List<BoardResponse> boards = boardService.getAllPost();
         return ResponseEntity.ok(boards);
     }
@@ -44,10 +50,16 @@ public class BoardController {
     /**
      * 게시판 글 추가
      */
-    @PostMapping("/board/{userNo}")
-    public ResponseEntity<?> savePost(@PathVariable("userNo") Long userNo,
+//    @PostMapping("/board/{userNo}")
+//    public ResponseEntity<?> savePost(@PathVariable("userNo") Long userNo,
+//                                      @RequestBody BoardRequest boardRequest) {
+//        BoardResponse post = boardService.post(userNo, boardRequest);
+//        return ResponseEntity.ok(post);
+//    }
+    @PostMapping("/board/test")
+    public ResponseEntity<?> savePost(
                                       @RequestBody BoardRequest boardRequest) {
-        BoardResponse post = boardService.post(userNo, boardRequest);
+        BoardResponse post = boardService.post2(boardRequest);
         return ResponseEntity.ok(post);
     }
 
@@ -86,8 +98,9 @@ public class BoardController {
      * /api/board?title=""
      */
     @GetMapping("/board/title")
-    public ResponseEntity<?> findPostByTitle(@RequestParam("title") String title) {
-        List<BoardResponse> postByTitle = boardService.findPostByTitle(title);
+    public ResponseEntity<?> findPostByTitle(@RequestParam("title") String title,
+                                             @PageableDefault(sort = "no", direction = Sort.Direction.DESC) Pageable pageable) {
+        PageImpl<BoardResponse> postByTitle = boardService.findPostByTitle(title, pageable);
         return ResponseEntity.ok(postByTitle);
     }
 
@@ -97,12 +110,16 @@ public class BoardController {
         return ResponseEntity.ok(postByWriter);
     }
 
-//    /**
-//     * 게시판 list 가져오기
-//     */
-//    @GetMapping("/board/list")
-//    public ResponseEntity<?> getBoardList(@RequestParam(value = "page", defaultValue = "0") int page) {
-//        Page<Board> paging = this.boardService.getList(page);
-//        return ResponseEntity.ok(paging);
-//    }
+    /**
+     * 게시판 list 가져오기
+     * @PageableDefault - size : 한 페이지에 담을 모델의 수를 정할 수 있다. 기본 값은 10 이다.
+     * - sort : 정렬의 기준이 되는 속성을 정한다.
+     * - direction : 오름차순과 내림차순 중 기준을 선택할 수 있다.
+     * - Pageable pageable : PageableDefault 값을 갖고 있는 변수를 선언한다.
+     */
+    @GetMapping("/board/list") // default size = 10
+    public ResponseEntity<?> getBoardList(@PageableDefault(sort = "no", direction = Sort.Direction.DESC) Pageable pageable) {
+        Page<BoardResponse> list = boardService.getList(pageable);
+        return ResponseEntity.ok(list);
+    }
 }

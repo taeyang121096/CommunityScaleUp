@@ -1,15 +1,13 @@
 package com.scaleup.authentication.api;
 
 import com.scaleup.authentication.dto.LoginRequest;
+import com.scaleup.authentication.dto.Register;
 import com.scaleup.authentication.dto.UserRequest;
 import com.scaleup.authentication.dto.UserResponse;
 import com.scaleup.authentication.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.net.URI;
@@ -24,14 +22,24 @@ public class UserController {
     @PostMapping("/user/signup")
     public ResponseEntity<UserResponse> signup(@RequestBody @Valid UserRequest request) {
         UserResponse response = userService.signUp(request);
-        System.out.println(response.getName());
         return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/users")
+    public Register registers() {
+        System.out.println("서버 접근");
+        Register register = Register.builder()
+                .id(1)
+                .username("이태양")
+                .password("taeyang")
+                .email("taeyang121@naver.com")
+                .build();
+        return register;
     }
 
     @PostMapping("/user/login")
     public ResponseEntity<UserResponse> login(@RequestBody @Valid LoginRequest request) {
         UserResponse response = userService.login(request);
-        System.out.println("로그인 성공");
         return ResponseEntity.ok(response);
     }
 }

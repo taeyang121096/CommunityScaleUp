@@ -11,7 +11,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.EntityNotFoundException;
 import javax.servlet.http.HttpServletResponse;
-import java.util.*;
+import java.util.List;
+import java.util.Map;
 
 @RequiredArgsConstructor
 @RestController
@@ -54,8 +55,8 @@ public class ItemController {
     public ResponseEntity<?> deleteItem(@PathVariable("itemId") Long itemId) {
         if (!itemService.deleteItem(itemId)) {
             return new ResponseEntity<String>("fail", HttpStatus.NOT_IMPLEMENTED);
-        }
-        return new ResponseEntity<String>("success", HttpStatus.OK);
+        } else
+            return new ResponseEntity<String>("success", HttpStatus.OK);
     }
 
     /**

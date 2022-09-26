@@ -13,7 +13,7 @@ import java.util.*;
 
 public interface BoardRepository extends JpaRepository<Board, Long> {
     @Query("SELECT b FROM Board b WHERE b.title LIKE %:title%")
-    List<Board> findBoardByTitle(String title);
+    List<Board> findBoardByTitle(String title, Pageable pageable);
 
     @Query("select b from Board b where b.writer Like %:writer%")
     List<Board> findBoardByWriter(String writer);

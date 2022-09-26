@@ -10,17 +10,6 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import ReactHtmlParser from 'html-react-parser';
 import moment from 'moment';
 import Write from './Write';
-import {
-  getYear,
-  getMonth,
-  getDate,
-  getDay,
-  getHours,
-  getMinutes,
-  getSeconds,
-  getMilliseconds,
-  format
-} from "date-fns";
 import foramtDate from '../../utils/foramtDate';
 
 function BulletinBoard02() {
@@ -34,23 +23,12 @@ function BulletinBoard02() {
     time:''
   })
   const [viewContent, setViewContent] = useState([]);
-  const nowTime = moment().format('YY-MM-DD HH:mm:ss'); //현재 시간
-  // const date1 = String(new Date());
-  // const [registtime, setRegistTime] = useState(date1);
   let time = new Date().getHours();
   let minute = new Date().getMinutes();
   let seconds = new Date().getSeconds();
   let date1 = String(time) + ":" + String(minute) + ":" + String(seconds);
   let [registtime, setRegistTime] = useState([]);
   const [hits, setHits] = useState(0);
-
-  //등록하기 버튼 누를 때 시간 state 저장..?
-
-  // useEffect(() => {
-  //   setRegistTime
-
-  // },[])
-
   const getValue = e => { //name있는 값 가져와서 writeContent에 저장
     const { name, value } = e.target;
     setWriteContent({
@@ -87,13 +65,13 @@ function BulletinBoard02() {
   }
 
   const onClickWrite = () => {
-    const url = '/api/board/${userNo}';
+    const url = '/api/board/test';
     const sendParam = {
       title: writeContent.title,
       content: writeContent.content,
-      time: registtime[registtime.length-1],
+      // time: registtime[registtime.length-1],
       category: writeContent.category,
-      hits: hits
+      // hits: hits
     }
     axios.post(url, sendParam)
       .then((res) => {

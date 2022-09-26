@@ -7,9 +7,7 @@ import com.scaleup.authentication.entity.User;
 import com.scaleup.authentication.repository.BoardRepository;
 import com.scaleup.authentication.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -32,6 +30,7 @@ public class BoardServiceImpl implements BoardService {
         board.updateViews(board.getViews() + 1);
 
         return BoardResponse.builder()
+                .no(board.getNo())
                 .writer(board.getWriter())
                 .title(board.getTitle())
                 .content(board.getContent())
@@ -46,6 +45,7 @@ public class BoardServiceImpl implements BoardService {
         List<BoardResponse> boards = new ArrayList<>();
         for (Board board : list) {
             boards.add(BoardResponse.builder()
+                    .no(board.getNo())
                     .writer(board.getWriter())
                     .title(board.getTitle())
                     .content(board.getContent())
@@ -56,12 +56,17 @@ public class BoardServiceImpl implements BoardService {
         return boards;
     }
 
+    /**
+     * List<Class> 를 Page 로 Return 받는 방법
+     * PageImple은 Page를 복사? 한 느낌 ?
+     */
     @Override
-    public List<BoardResponse> findPostByTitle(String title) {
-        List<Board> boardByTitle = boardRepository.findBoardByTitle(title);
+    public PageImpl<BoardResponse> findPostByTitle(String title, Pageable pageable) {
+        List<Board> boardByTitle = boardRepository.findBoardByTitle(title, pageable);
         List<BoardResponse> boardResponses = new ArrayList<>();
         for (Board board : boardByTitle) {
             boardResponses.add(BoardResponse.builder()
+                    .no(board.getNo())
                     .writer(board.getWriter())
                     .title(board.getTitle())
                     .content(board.getContent())
@@ -69,8 +74,8 @@ public class BoardServiceImpl implements BoardService {
                     .category(board.getCategory())
                     .createDate(board.getCreateDate()).build());
         }
-
-        return boardResponses;
+        PageImpl<BoardResponse> boardResponses1 = new PageImpl<>(boardResponses);
+        return boardResponses1;
     }
 
     @Override
@@ -79,6 +84,7 @@ public class BoardServiceImpl implements BoardService {
         List<BoardResponse> boardResponses = new ArrayList<>();
         for (Board board : boardByWriter) {
             boardResponses.add(BoardResponse.builder()
+                    .no(board.getNo())
                     .writer(board.getWriter())
                     .title(board.getTitle())
                     .content(board.getContent())
@@ -103,6 +109,29 @@ public class BoardServiceImpl implements BoardService {
                 .build());
 
         return BoardResponse.builder()
+                .no(board.getNo())
+                .writer(board.getWriter())
+                .title(board.getTitle())
+                .content(board.getContent())
+                .views(board.getViews())
+                .category(board.getCategory())
+                .createDate(board.getCreateDate()).build();
+    }
+
+    @Override
+    public BoardResponse post2(BoardRequest boardRequest) {
+        Board board = boardRepository.save(Board.builder()
+                .userNo(1L)
+                .writer("허수빈")
+                .title(boardRequest.getTitle())
+                .content(boardRequest.getContent())
+                .createDate(LocalDateTime.now())
+                .views(0)
+                .category(boardRequest.getCategory())
+                .build());
+
+        return BoardResponse.builder()
+                .no(board.getNo())
                 .writer(board.getWriter())
                 .title(board.getTitle())
                 .content(board.getContent())
@@ -116,13 +145,13 @@ public class BoardServiceImpl implements BoardService {
         Board board = boardRepository.findById(boardNo).orElseThrow(EntityNotFoundException::new);
 
         return BoardResponse.builder()
+                .no(board.getNo())
                 .writer(board.getWriter())
                 .title(board.getTitle())
                 .content(board.getContent())
-                .createDate(board.getCreateDate())
                 .views(board.getViews())
                 .category(board.getCategory())
-                .build();
+                .createDate(board.getCreateDate()).build();
     }
 
     @Transactional
@@ -134,12 +163,13 @@ public class BoardServiceImpl implements BoardService {
                 LocalDateTime.now());
 
         return BoardResponse.builder()
+                .no(board.getNo())
                 .writer(board.getWriter())
                 .title(board.getTitle())
                 .content(board.getContent())
                 .views(board.getViews())
                 .category(board.getCategory())
-                .updateDate(board.getCreateDate()).build();
+                .createDate(board.getCreateDate()).build();
     }
 
     @Transactional
@@ -152,14 +182,13 @@ public class BoardServiceImpl implements BoardService {
             return false;
     }
 
-//    @Override
-//    public Page<Board> getList(int page) {
-//        List<Sort.Order> sorts = new ArrayList<>();
-//        sorts.add(Sort.Order.desc("createTime"));
-//        PageRequest pageable = PageRequest.of(page, 5, Sort.by(sorts));
-//
-//        return this.boardRepository.findAll(pageable);
-//    }
-    // Request 가 오면
-
+    @Override
+    public Page<BoardResponse> getList(Pageable pageable) {
+        Page<Board> post = boardRepository.findAll(pageable);
+        Page<BoardResponse> paging = post.map(p -> new BoardResponse(
+                p.getNo(), p.getWriter(), p.getTitle(), p.getContent(),
+                p.getViews(), p.getCategory(), p.getCreateDate(), p.getUpdateDate()
+        ));
+        return paging;
+    }
 }

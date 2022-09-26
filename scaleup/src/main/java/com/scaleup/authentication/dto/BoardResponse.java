@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class BoardResponse {
+    private Long no;
     private String writer;
     private String title;
     private String content;

@@ -5,14 +5,22 @@ import lombok.*;
 import javax.validation.constraints.NotNull;
 
 @Builder
-@Getter @Setter
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 public class ItemRequest {
     @NotNull
-    private String name;
+    private String itemName;
     @NotNull
-    private Integer price;
+    private String itemCategory;
     @NotNull
-    private Integer stockQuantity;
+    private int itemPrice;
+    @NotNull
+    private int quantity;
+    @NotNull
+    private String itemInfo;
+    @NotNull
+    private String itemProduceInfo;
+    @NotNull
+    private String itemSize;
 }
