@@ -5,38 +5,23 @@ import styled, { ThemeConsumer } from 'styled-components';
 import CommunityNavbar from './components/communityNavbar';
 import '../../styles/community/BulletinBoard02.css'
 import { AiFillEdit } from "react-icons/ai";
-import { CKEditor } from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import ReactHtmlParser from 'html-react-parser';
-import moment from 'moment';
-import Write from './Write';
 import foramtDate from '../../utils/foramtDate';
 
 function BulletinBoard02() {
 
   const [currentClick, setCurrentClick] = React.useState(null);
   const [prevClick, setPrevClick] = React.useState(null);
-  const [writeContent, setWriteContent] = useState({ //입력한 내용 state에 저장
-    title: '',
-    content: '',
-    category: '',
-    time:''
-  })
-  const [viewContent, setViewContent] = useState([]);
-  let time = new Date().getHours();
-  let minute = new Date().getMinutes();
-  let seconds = new Date().getSeconds();
-  let date1 = String(time) + ":" + String(minute) + ":" + String(seconds);
-  let [registtime, setRegistTime] = useState([]);
-  const [hits, setHits] = useState(0);
-  const getValue = e => { //name있는 값 가져와서 writeContent에 저장
-    const { name, value } = e.target;
-    setWriteContent({
-      ...writeContent,
-      [name]: value
-    })
-    console.log(writeContent);
-  };
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  const [viewContent, setViewContent] = useState([{ //글 목록 받는
+    no : '',
+    category : '',
+    title : '',
+    content : '',
+    createDate : '',
+    views : ''
+  }]);
+  const [hits, setHits] = useState(0); //조회수
 
   const GetClick = (e) => { //메뉴 색 클릭 시, 바꾸기
     setCurrentClick(e.target.id);
@@ -60,34 +45,16 @@ function BulletinBoard02() {
     [currentClick]
   );
 
-  const HandleHist = () => {
+  const HandleHist = () => { //조회수
 
-  }
-
-  const onClickWrite = () => {
-    const url = '/api/board/test';
-    const sendParam = {
-      title: writeContent.title,
-      content: writeContent.content,
-      // time: registtime[registtime.length-1],
-      category: writeContent.category,
-      // hits: hits
-    }
-    axios.post(url, sendParam)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((error) => {
-        console.log(error.response);
-      })
   }
 
   //글 목록 받아오기
   useEffect(() => {
     axios.get('/api/board/list')
       .then(res => {
-        // setViewContent(res.data); //setViewContent에 저장
-        console.log(res);
+        setViewContent(res.data.viewContent); //setViewContent에 저장
+        console.log(res.data);
       })
       .catch((error) => {
         console.log(error.res);
@@ -126,22 +93,23 @@ function BulletinBoard02() {
                     <th className='menu_item1'>글번호</th>
                     <th className='menu_item2'>카테고리</th>
                     <th className='menu_item'>제목</th>
+                    <th className='menu_item'>내용</th>
                     <th className='menu_item2'>날짜</th>
-                    <th className='menu_item2'>조회수</th>
+                    <th className='menu_item1'>조회수</th>
                   </tr>
                 </thead>
-                <tbody>
-                  {viewContent.map(element => //앞에 값이 계속 바뀌니까 계속 바뀜...
-                    <tr className='table_content'>
-                      <td></td>
-                      <td>{element.category}</td>
-                      <Link to='/vocview'><td>{element.title}</td></Link>
-                      {/* <td>{ReactHtmlParser(element.content)}</td> */}
-                      <td>{registtime[registtime.length-1]}</td> 
-                      <td>{hits}</td>
-                    </tr>
-                  )}
-                </tbody>
+                {/* <tbody>
+                  {viewContent.map((element, no) => {
+                    <tr key={no} className='table_content'>
+                    <td>{element.no}</td>
+                    <td>{element.category}</td>
+                    <Link to='/vocview'><td>{element.title}</td></Link>
+                    <td>{ReactHtmlParser(element.content)}</td>
+                    <td>{element.createDate}</td>
+                    <td>{element.views}</td>
+                  </tr>
+                  })}
+                </tbody> */}
               </table>
             </div>
             <br></br>
@@ -149,47 +117,6 @@ function BulletinBoard02() {
             <Link to='/community/write'><button className='write_btn'><AiFillEdit />글쓰기</button></Link>
             <br></br>
             <br></br>
-
-            <div className='form-wrapper'>
-              <select onChange={getValue} name='category'>
-                <option value="유머">유머</option>
-                <option value="소식">소식</option>
-                <option value="감동">감동</option>
-                <option value="정보">정보</option>
-              </select>
-              <input className="title-input" type='text' placeholder='제목' onChange={getValue}
-                name='title' />
-              <CKEditor
-                editor={ClassicEditor}
-                data="<p>Hello from CKEditor 5!</p>"
-                onReady={editor => {
-                  // You can store the "editor" and use when it is needed.
-                  console.log('Editor is ready to use!', editor);
-                }}
-                onChange={(event, editor) => {
-                  const data = editor.getData();
-                  console.log({ event, editor, data });
-                  setWriteContent({
-                    ...writeContent,
-                    content: data
-                  })
-                  console.log(writeContent);
-                }}
-                onBlur={(event, editor) => {
-                  console.log('Blur.', editor);
-                }}
-                onFocus={(event, editor) => {
-                  console.log('Focus.', editor);
-                }}
-              />
-            </div>
-            <button className="submit-button" onClick={() => {
-              setViewContent(viewContent.concat({ ...writeContent }));
-              let copy = [...registtime];
-              copy.push(date1); //앞에 새로운 배열값 추가
-              setRegistTime(copy);
-              onClickWrite();          
-            }}><AiFillEdit />등록</button>
           </div>
         </div>
       </div>

@@ -7,12 +7,20 @@ import { useHistory } from "react-router";
 import '../../styles/community/VocView.css'
 
 function VocView({location, history}){ 
-    const [postData, setPostData] = useState([]);
+    const [postData, setPostData] = useState({
+        no : '',
+        category : '',
+        title : '',
+        content : '',
+        createDate : '',
+        views : '',
+        writer : ''
+    });
 
     useEffect(() => { //게시물 불러오기
         axios.get('/api/board/{boardNo}')
           .then(res => {
-            setPostData(res.data); //setPostData에 저장
+            setPostData(res.data.postData); //setPostData에 저장
             console.log(res);
           })
           .catch((error) => {
@@ -27,6 +35,7 @@ function VocView({location, history}){
         <br></br>
         <h2 align="center">게시글 상세정보</h2>
         <div className="voc-view-wrapper">
+            <div className='voc-view-content'>
             <div className="voc-view-row">
                 <label for="voc-number">카테고리</label>
                 
@@ -57,10 +66,10 @@ function VocView({location, history}){
             </div>
             {/*<h4 align="right"><Link to ="/community">목록으로 돌아가기</Link></h4>*/}
             <br></br>
-            <Link to='/community'><button className="to-bulletinboard02-button2">목록으로</button></Link>
-        
-            
-        </div></>
+            </div>
+            <Link to='/community'><button className="to-bulletinboard02-button2">목록으로</button></Link>       
+        </div>
+        </>
 
     )
 

@@ -2,23 +2,19 @@ import React, {useState, useEffect}from 'react'
 import axios from 'axios';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import moment from 'moment';
 import { AiFillEdit } from "react-icons/ai";
 import CommunityNavbar from './components/communityNavbar';
 import '../../styles/community/BulletinBoard02.css'
 import { Link } from 'react-router-dom';
 import {validateEmpty} from '../../utils/validateWrite.js'
+import ReactHtmlParser from 'html-react-parser';
+import Alert from '@mui/material/Alert';
+import Stack from '@mui/material/Stack';
 
 function Write() {
 
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  let time = new Date().getHours();
-  let minute = new Date().getMinutes();
-  let seconds = new Date().getSeconds();
-  let date1 = String(time) + ":" + String(minute) + ":" + String(seconds);
-  let [registtime, setRegistTime] = useState([]);
-
   const [writeContent, setWriteContent] = useState({ //입력한 내용 state에 저장
     title: '',
     content: '',
@@ -28,7 +24,7 @@ function Write() {
   const [viewContent, setViewContent] = useState([]);
   const [disabled, setDisabled] = useState(false); //disabled는 비활성화. false이므로 활성화가 기본.
 
-  const getValue = e => {
+  const getValue = e => { //name있는 값 가져와서 writeContent에 저장
     const { name, value } = e.target;
     setWriteContent({
       ...writeContent,
@@ -46,13 +42,14 @@ function Write() {
     const sendParam = {
       title: writeContent.title,
       content: writeContent.content,
-      // time: registtime[registtime.length-1],
       category: writeContent.category
     }
     axios.post(url, sendParam)
       .then((res) => {
         console.log(res);
         alert('등록 완료');
+        // <Alert severity="success">등록 완료!</Alert>
+        window.location.href = "/#/community";
       })
       .catch((error) => {
         console.log(error.response);
@@ -102,9 +99,6 @@ function Write() {
             </div>
             <button className="submit-button" disabled={disabled} onClick={() => {
               setViewContent(viewContent.concat({ ...writeContent }));
-              let copy = [...registtime];
-              copy.push(date1); //뒤에 새로운 배열값 추가
-              setRegistTime(copy);
               onClickWrite();
             }}><AiFillEdit />등록</button> <Link to='/community'><button className="submit-button2">돌아가기</button></Link>
             </div>
