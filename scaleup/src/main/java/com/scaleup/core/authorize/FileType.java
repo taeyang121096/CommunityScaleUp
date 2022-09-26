@@ -1,10 +1,13 @@
 package com.scaleup.core.authorize;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
-@AllArgsConstructor
 public enum FileType {
-    jpeg, pdf
+    jpeg("이미지"), pdf("피디에프");
+    private String value;
+
+    private FileType(String value) {
+        this.value = value;
+    }
 }

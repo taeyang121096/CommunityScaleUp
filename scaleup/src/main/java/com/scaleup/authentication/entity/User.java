@@ -1,51 +1,38 @@
 package com.scaleup.authentication.entity;
 
-
-import com.scaleup.core.authorize.Role;
 import lombok.*;
-import org.hibernate.annotations.ColumnDefault;
-import org.hibernate.annotations.DynamicInsert;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 @Entity
 @Builder
 @Getter
-@DynamicInsert
 @Table(name = "users")
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id")
-    private Long id;
-
-    @Column(name = "user_name")
+    @Column(name = "user_no")
+    private Long no;
+    @NotNull
+    @Column(name = "user_name", length = 15)
     private String name;
-
-    @Column(name = "user_email")
+    @NotNull
+    @Column(name = "user_email", length = 32)
     private String email;
-
-    @Column(name = "user_userId")
+    @NotNull
+    @Column(name = "user_userId", length = 20)
     private String userId;
-
-    @Column(name = "user_pw")
+    @NotNull
+    @Column(name = "user_pw", length = 20)
     private String pw;
-
-    @Column(name = "user_sex")
+    @NotNull
+    @Column(name = "user_sex", length = 1)
     private String sex;
-
-    @Enumerated(EnumType.STRING)
-    @ColumnDefault("'ROLE_USER'")
-    private Role role;
-
-//    public User(String name, String email, String userId, String pw, String sex, String role) {
-//        this.name = name;
-//        this.email = email;
-//        this.userId = userId;
-//        this.pw = pw;
-//        this.sex = sex;
-//        this.role = role;
-//    }
+    @NotNull
+    @Column(name = "user_role", length = 10)
+    private String role;
 }

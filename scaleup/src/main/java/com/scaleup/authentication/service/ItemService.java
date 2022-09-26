@@ -2,13 +2,12 @@ package com.scaleup.authentication.service;
 
 import com.scaleup.authentication.dto.ItemRequest;
 import com.scaleup.authentication.dto.ItemResponse;
-import com.scaleup.authentication.entity.FileInfo;
-import com.scaleup.authentication.entity.Item;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
-import java.util.*;
+import java.util.List;
+import java.util.Map;
 
 @Service
 public interface ItemService {
