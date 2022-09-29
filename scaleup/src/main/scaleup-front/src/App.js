@@ -12,6 +12,7 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import Write from './pages/community/Write';
 import VocView from './pages/community/VocView';
+import Copy from './pages/community/Copy';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
                 <Route path="/clothes" element = {<Clothes/>}/>
                 <Route path="/community/write" element = {<Write/>}/>
                 <Route path="/vocview" element={<VocView/>}/>
+                <Route path="/copy" element={<Copy/>}/>
                 {/* <Route path="/postmain" element = {<PostMain/>}/> */}
         </Routes>
       </Router>

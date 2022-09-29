@@ -84,6 +84,8 @@ width: 1000px;
   font-size:medium;
   background-color: white;
   border: 1.3px solid black;
+  align-items: center;
+  justify-content: center;
 }
 
 
@@ -110,7 +112,7 @@ width: 1000px;
 .submit-button {
   width: 120px;
   height: 40px;
-  font-size: 20px;
+  font-size: 40px;
   border: 1.3px solid black;
   border-radius: 5px;
   margin-top: 40px;
@@ -119,18 +121,26 @@ width: 1000px;
   vertical-align: middle;
 }
 
+.write_btn2{
+  text-align: center;
+  width: 100%;
+  border: 0;
+  align-items: center;
+  justify-content: center;
+}
+
 .submit-button2 {
   width: 120px;
   height: 40px;
-  font-size: 20px;
-  background-color: black;
+  font-size: 40px;
+  /* background-color: black;
   color: white;
   border: 1.3px solid black;
   border-radius: 5px;
   margin-top: 40px;
   margin-left: 10px;
   margin-right: 10px;
-  vertical-align: middle;
+  vertical-align: middle; */
 }
 
 .ck.ck-editor__editable:not(.ck-editor__nested-editable) {
